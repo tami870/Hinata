@@ -1,0 +1,62 @@
+@use "sass:math";
+
+// インナー幅設定
+// コンテンツのインナー幅（最も共通の幅が多い部分）
+$inner: 1275px;
+// ※キュンパス幅ではなくインナーの幅を指す
+
+// 余白
+$padding-pc: 25px;
+$padding-sp: 20px;
+
+////////////////////
+// フォント設定
+////////////////////
+
+$base-font-family: "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+  "Yu Gothic", "Meiryo", "sans-serif";
+$second-font-family: "M PLUS Rounded 1c", "Hiragino Sans",
+  "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", "sans-serif";
+$third-font-family: "Noto Serif JP", "Noto Serif", "Hiragino Mincho ProN",
+  "Yu Mincho", "MS PMincho", "serif";
+$fourth-font-family: "Montserrat", "Arial", "Helvetica Neue", "Helvetica",
+  "sans-serif";
+// ※検証ツールでしっかり反映されているか確認する
+
+body {
+  font-family: $base-font-family;
+}
+
+// フォントウェイト
+$regular: 400;
+$medium: 500;
+$bold: 700;
+
+////////////////////
+// 色の指定
+////////////////////
+
+//色指定（共通性のあるものは出来る限り指定すると良い）
+$black: #000000;
+$black2: #333333;
+$white: #ffffff;
+$white2: #dfefea;
+$white3: #f6f4e9;
+$gray: #d9d9d9;
+$orange: #ff8533;
+$red: #d24322;
+$red2: #e10000;
+$green: #094c38;
+$green2: #20756c;
+$background-green: #8dd1bc;
+$background-green2: #17403c;
+
+// memo:Xポスト配色一覧
+$mint: #8ad0bb;
+$chocolate: #7e412a;
+$white2: #fffeef;
+$strawberry: #e66684;
+$green: #488234;
+$strawberry: #91cf98;
+$strawberry: #d4e7ba;
+$strawberry: #fa7070;

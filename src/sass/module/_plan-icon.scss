@@ -1,0 +1,16 @@
+@use "global" as *;
+
+.plan-icon {
+  width: rem(248);
+  padding: rem(11);
+  font-size: rem(25);
+  color: $white3;
+  font-family: $fourth-font-family;
+  line-height: 1.6;
+  font-weight: $bold;
+  letter-spacing: 0.1em;
+  background-color: $background-green;
+  border-radius: 40px;
+  text-transform: uppercase;
+  text-align: center;
+}

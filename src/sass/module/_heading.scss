@@ -1,0 +1,9 @@
+@use "global" as *;
+
+.heading {
+  font-family: $fourth-font-family;
+  font-size: rem(48);
+  font-weight: $bold;
+  color: $black2;
+  border-bottom: 3px solid $black2;
+}

@@ -1,0 +1,29 @@
+@use "global" as *;
+
+.button {
+  display: inline-block;
+  width: rem(478);
+  font-family: $base-font-family;
+  font-size: rem(24);
+  font-weight: $bold;
+  color: $white;
+  letter-spacing: 0.1em;
+  box-shadow: 0 7.69px 11.53px 0 rgba(35, 19, 5, 0.23);
+  background-color: $orange;
+  padding: rem(12);
+  border-radius: rem(10);
+  position: relative;
+  text-align: center;
+}
+
+.button:after {
+  position: absolute;
+  top: rem(31);
+  right: rem(27);
+  width: rem(9);
+  height: rem(9);
+  content: "";
+  border-top: 1.61px solid $white;
+  border-right: 1.61px solid $white;
+  transform: translateY(-50%) rotate(45deg);
+}
