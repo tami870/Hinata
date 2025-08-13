@@ -8,8 +8,6 @@
 }
 
 .introduction__inner {
-  padding-left: rem(75);
-  padding-right: rem(75);
 }
 
 .introduction__content {
@@ -23,33 +21,35 @@
 }
 
 .introduction__image {
-  max-width: rem(242);
+  /* 1440pxで242pxになるよう計算: 242/1440 = 0.168 → 16.8vw */
+  max-width: clamp(rem(160), 16.85vw, rem(242));
   width: 100%;
+  height: auto;
   border-radius: 50%;
 }
 
 .introduction__image:not(:first-of-type) {
-  margin-left: rem(64);
+  margin-left: clamp(rem(20), 4.5vw, rem(64));
 }
 
 .introduction__text-area {
-  margin-left: rem(105);
+  margin-left: clamp(rem(28), 7.085vw, rem(105));
   font-family: $third-font-family;
   font-weight: $bold;
 }
 
 .introduction__title {
-  font-size: rem(24);
+  font-size: clamp(rem(18), 2.2vw, rem(24));
   line-height: 1.7917;
   color: $black;
 }
 
 .introduction__text {
-  margin-top: rem(18);
-  font-size: rem(16);
+  margin-top: clamp(rem(12), 1.6vw, rem(18));
+  font-size: clamp(rem(14), 1.8vw, rem(16));
   line-height: 2;
 }
 
 .introduction__button {
-  margin-top: rem(26);
+  margin-top: clamp(rem(18), 2.2vw, rem(26));
 }

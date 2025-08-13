@@ -25,37 +25,37 @@
   grid-template-columns: 1fr;
   gap: clamp(12px, 2.4vw, 24px);
 
-  @media (min-width: 768px) {
+  @include mq(md) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     /* 行数は中身に応じて自動。2×2の見た目に */
   }
+}
 
-  &__item {
-  }
+.manga__item {
+}
 
-  &__figure {
-    margin: 0;
-    display: grid;
-    gap: 8px;
-  }
+.manga__figure {
+  margin: 0;
+  display: grid;
+  gap: 8px;
+}
 
-  &__image {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 12px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+.manga__image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
 
-    /* 画像が正方形前提でない場合の保険 */
-    aspect-ratio: 1 / 1; /* 必要ならコマ比率に合わせて変更 */
-    object-fit: cover; /* 余白を作らずトリミング */
-  }
+  /* 画像が正方形前提でない場合の保険 */
+  aspect-ratio: 1 / 1; /* 必要ならコマ比率に合わせて変更 */
+  object-fit: cover; /* 余白を作らずトリミング */
+}
 
-  &__caption {
-    font-size: clamp(12px, 1.8vw, 14px);
-    color: #4a5a5a;
-    text-align: center;
-  }
+.manga__caption {
+  font-size: clamp(12px, 1.8vw, 14px);
+  color: #4a5a5a;
+  text-align: center;
 }
 
 /* バリエーション例（背景や余白だけ変える） */

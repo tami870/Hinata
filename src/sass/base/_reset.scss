@@ -74,7 +74,6 @@ img:not([alt]) {
   filter: blur(10px);
 }
 
-
 /* フォームリセット */
 input,
 button,
@@ -116,4 +115,9 @@ a {
   text-decoration: none;
   color: inherit;
   transition: opacity 0.3s;
+}
+
+// 追加
+body {
+  padding-top: var(--header-h);
 }
