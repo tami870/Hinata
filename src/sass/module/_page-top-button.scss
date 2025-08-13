@@ -1,0 +1,27 @@
+@use "global" as *;
+
+.page-top-button {
+  position: fixed;
+  z-index: 9000;
+  right: 40px;
+  bottom: 120px;
+  width: rem(60);
+  height: rem(60);
+  cursor: pointer;
+  background-color: $background-green;
+  border: 2px solid $white;
+  border-radius: 50%; /* 丸くする */
+  color: $white; /* 矢印の色 */
+  font-size: rem(24); /* 矢印の大きさ */
+  display: flex; /* 矢印を中央に配置 */
+  align-items: center;
+  justify-content: center;
+
+  @include mq(md) {
+    right: 15px;
+    bottom: 75px;
+    width: rem(28);
+    height: rem(28);
+    font-size: rem(13); /* 矢印の大きさ */
+  }
+}
