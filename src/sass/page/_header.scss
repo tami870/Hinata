@@ -1,9 +1,5 @@
 @use "global" as *;
 
-:root {
-  --header-h: 105px;
-}
-
 .header {
   position: fixed;
   z-index: 1000;
@@ -11,14 +7,14 @@
   left: 0;
   right: 0;
   width: 100%;
-  height: var(--header-h);
+  height: rem(105);
   background-color: $white;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.22);
 }
 
-// .header--scrolled {
-//   background-color: $white;
-// }
+.header--scrolled {
+  background-color: $white;
+}
 
 .header__inner {
   display: flex;

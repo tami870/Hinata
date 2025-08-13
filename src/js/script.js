@@ -11,17 +11,17 @@ jQuery(function ($) {
     $(".js-drawer").fadeOut();
   });
 
-  // // スクロールでヘッダーにクラスを付ける
-  // $(window).on("scroll", function () {
-  //   const scrollTop = $(this).scrollTop();
-  //   const triggerHeight = $(".mv").outerHeight();
+  // スクロールでヘッダーにクラスを付ける
+  $(window).on("scroll", function () {
+    const scrollTop = $(this).scrollTop();
+    const triggerHeight = $(".first-view").outerHeight();
 
-  //   if (scrollTop > triggerHeight) {
-  //     $(".header").addClass("header--scrolled");
-  //   } else {
-  //     $(".header").removeClass("header--scrolled");
-  //   }
-  // });
+    if (scrollTop > triggerHeight) {
+      $(".header").addClass("header--scrolled");
+    } else {
+      $(".header").removeClass("header--scrolled");
+    }
+  });
 
   // mainコンテンツをヘッダーの高さ分だけ下げる
   const headerHeight = $(".js-header").outerHeight();
