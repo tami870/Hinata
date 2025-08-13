@@ -1,0 +1,24 @@
+@use "global" as *;
+
+.faq {
+  padding-top: rem(100);
+  padding-bottom: rem(101);
+  background-color: $background-white;
+}
+
+.faq__inner {
+}
+
+.faq__title {
+}
+
+.faq__lists {
+  margin-top: rem(63);
+}
+
+.faq__list {
+}
+
+.faq__list:not(:first-of-type) {
+  margin-top: rem(31.5);
+}

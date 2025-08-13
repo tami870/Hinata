@@ -22,8 +22,8 @@
   <!-- canonical -->
   <link rel="canonical" href="https://example.com/">
   <!-- Favicon / App Icons -->
-  <link rel="icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+  <link rel="icon" href="">
+  <link rel="apple-touch-icon" href="" sizes="180x180">
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,20 +33,519 @@
   <!-- css -->
   <link rel="stylesheet" href="./assets/css/style.css" />
   <!-- JavaScript（jQuery 3.7.1 + 正SRI）-->
-  <script defer src="https://code.jquery.com/jquery-3.7.1.min.js"
-    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  <script defer src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script defer src="./assets/js/script.js"></script>
 </head>
 
 <body>
-  <header class="header">
+  <header class="header js-header">
+    <div class="header__inner">
+      <h1 class="header__title"><img class="header__logo" src="./assets/images/common/header-logo.svg" alt="hinata"
+          width="160" height="83" decoding="async" loading="eager" fetchpriority="high">
+      </h1>
+      <nav class="header__nav u-desktop">
+        <ul class="header__items">
+          <li class="header__item">
+            <a href="#plan" class="header__link">WEB×バックオフィス</a>
+          </li>
+          <li class="header__item">
+            <a href="#faq" class="header__link">よくある質問</a>
+          </li>
+          <li class="header__item">
+            <a href="#contact" class="header__link">お問合せ</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
 
+    <!-- ハンバーガーメニュー -->
+    <div class="hamburger js-hamburger u-mobile">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- ドロワー -->
+    <div class="drawer-menu js-drawer">
+      <div class="drawer-menu__bg"></div> <!-- ぼかし背景用 -->
+      <div class="drawer-menu__inner">
+        <ul class="drawer-menu__items">
+          <li class="drawer-menu__item">
+            <a href="#plan" class="drawer-menu__link">WEB×バックオフィス</a>
+          </li>
+          <li class="drawer-menu__item">
+            <a href="#faq" class="drawer-menu__link">よくある質問</a>
+          </li>
+          <li class="drawer-menu__item">
+            <a href="#contact" class="drawer-menu__link">お問合せ</a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </header>
-  <main>
-  </main>
-  <footer>
 
+  <main class="main">
+    <section class="first-view">
+      <div class="first-view__inner">
+        <div class="first-view__content">
+          <div class="first-view__catchphrase">
+            <h2 class="first-view__catchphrase-text">
+              <span class="first-view__catchphrase-part">
+                Webと<br>バックオフィスの<br>"困った"を
+              </span>
+              <span class="first-view__catchphrase-part--strong">
+                ママチームが<br>まるっとサポート
+              </span>
+            </h2>
+          </div>
+          <div class="first-view__visuals">
+            <img src="./assets/images/common/first-view01.webp" alt="花のイラストを背景に、ママチームが子どもを見守りながら仲良く事務作業をしている温かい雰囲気のイラスト"
+              class="first-view__visual-image" width="819" height="546">
+            <img src="./assets/images/common/first-view02.webp" alt="" class="first-view__visual-deco"
+              aria-hidden="true" width="274" height="274">
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <section class="introduction">
+      <div class="introduction__inner">
+        <div class="introduction__content">
+          <div class="introduction__images">
+            <img src="./assets/images/common/introduction01.webp" alt="" class="introduction__image" aria-hidden="true"
+              width="242" height="242">
+            <img src="./assets/images/common/introduction02.webp" alt="" class="introduction__image" aria-hidden="true"
+              width="242" height="242">
+          </div>
+          <div class="introduction__text-area">
+            <h2 class="introduction__title">ちょっとした「これお願いできる？」も大歓迎<br>
+              あなたの困ったを聞かせてください</h2>
+            <p class="introduction__text">
+              育児と仕事を両立する柔軟さと現場で磨いたスキルで<br>あなたの事業に必要な“もうひとつの手”になります。
+            </p>
+            <a href="#" class="introduction__button button">無料で相談する</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- マンガ1 -->
+    <section class="manga" aria-label="事業内容を紹介するマンガ">
+      <div class="manga__inner inner">
+        <div class="heading-wrap heading-wrap--center">
+          <h2 class="heading heading__title">マンガでわかる事業内容</h2>
+        </div>
+
+        <ol class="manga__list">
+          <li class="manga__item">
+            <!-- <figure class="manga__figure">
+              <picture>
+                <source type="image/webp" srcset="images/manga-01.webp" />
+                <img class="manga__image"
+                     src="images/manga-01.png"
+                     alt="1コマ目：相談内容のヒアリングを行う場面"
+                     loading="lazy" width="640" height="640">
+              </picture> -->
+            <!-- <figcaption class="manga__caption">ヒアリング</figcaption>
+            </figure> -->
+          </li>
+
+          <li class="manga__item">
+            <!-- <figure class="manga__figure">
+              <picture>
+                <source type="image/webp" srcset="images/manga-02.webp" />
+                <img class="manga__image"
+                     src="images/manga-02.png"
+                     alt="2コマ目：課題の整理とご提案"
+                     loading="lazy" width="640" height="640">
+              </picture>
+              <figcaption class="manga__caption">課題整理</figcaption>
+            </figure> -->
+          </li>
+
+          <li class="manga__item">
+            <!-- <figure class="manga__figure">
+              <picture>
+                <source type="image/webp" srcset="images/manga-03.webp" />
+                <img class="manga__image"
+                     src="images/manga-03.png"
+                     alt="3コマ目：実装と運用の開始"
+                     loading="lazy" width="640" height="640">
+              </picture>
+              <figcaption class="manga__caption">実装・運用</figcaption>
+            </figure> -->
+          </li>
+
+          <li class="manga__item">
+            <!-- <figure class="manga__figure">
+              <picture>
+                <source type="image/webp" srcset="images/manga-04.webp" />
+                <img class="manga__image"
+                     src="images/manga-04.png"
+                     alt="4コマ目：効果検証と改善"
+                     loading="lazy" width="640" height="640">
+              </picture>
+              <figcaption class="manga__caption">改善</figcaption>
+            </figure> -->
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="plan" class="plan" aria-labelledby="plan-title">
+      <div class="plan__inner">
+        <!-- セクション見出し -->
+        <div class="heading-wrap heading-wrap--center">
+          <h2 id="plan-title" class="plan__title heading heading__title">Web×バックオフィス</h2>
+        </div>
+
+        <!-- ======================
+             Group 1: WEB
+        ======================= -->
+        <section class="plan__group" aria-labelledby="plan-group-web">
+          <h3 id="plan-group-web" class="plan-group-label">WEB</h3>
+
+          <ul class="plan__items" role="list">
+            <!-- ループ開始 -->
+            <li class="plan__item">
+              <article class="plan-card" aria-label="シンプルプラン">
+                <div class="plan-card__icon-group">
+                  <div class="plan-card__icon" aria-hidden="true">
+                    <img src="./assets/images/common/plan-icon01.svg" alt="" width="41" height="41">
+                  </div>
+                </div>
+                <h4 class="plan-card__name">シンプルプラン</h4>
+                <p class="plan-card__price">¥80,000〜</p>
+                <p class="plan-card__note">テンプレ固定（4P）</p>
+              </article>
+            </li>
+            <!-- ループ終了 -->
+
+            <li class="plan__item">
+              <article class="plan-card" aria-label="シンプルプラン">
+                <div class="plan-card__icon-group">
+                  <div class="plan-card__icon" aria-hidden="true">
+                    <img src="./assets/images/common/plan-icon01.svg" alt="" width="41" height="41">
+                  </div>
+                  <div class="plan-card__icon" aria-hidden="true">
+                    <img src="./assets/images/common/plan-icon01.svg" alt="" width="41" height="41">
+                  </div>
+                </div>
+                <h4 class="plan-card__name">シンプルプラン</h4>
+                <p class="plan-card__price">¥80,000〜</p>
+                <p class="plan-card__note">テンプレ固定（4P）</p>
+              </article>
+            </li>
+
+            <li class="plan__item">
+              <article class="plan-card" aria-label="シンプルプラン">
+                <div class="plan-card__icon-group">
+                  <div class="plan-card__icon" aria-hidden="true">
+                    <img src="./assets/images/common/plan-icon01.svg" alt="" width="41" height="41">
+                  </div>
+                  <div class="plan-card__icon" aria-hidden="true">
+                    <img src="./assets/images/common/plan-icon01.svg" alt="" width="41" height="41">
+                  </div>
+                  <div class="plan-card__icon" aria-hidden="true">
+                    <img src="./assets/images/common/plan-icon01.svg" alt="" width="41" height="41">
+                  </div>
+                </div>
+                <h4 class="plan-card__name">シンプルプラン</h4>
+                <p class="plan-card__price">¥80,000〜</p>
+                <p class="plan-card__note">テンプレ固定（4P）</p>
+              </article>
+            </li>
+          </ul>
+        </section>
+
+        <!-- ======================
+             Group 2: バックオフィス
+        ======================= -->
+        <section class="plan__group">
+          <h3 class="plan__group--sub-label plan-group-label">バックオフィス</h3>
+
+          <ul class="plan__items--large">
+            <!-- ループ開始 -->
+            <li class="plan__item">
+              <article class="plan-card plan-card--large" aria-label="個人事業主">
+                <div class="plan-card__icon-group">
+                  <div class="plan-card__icon" aria-hidden="true">
+                    <img src="./assets/images/common/plan-icon01.svg" alt="" width="41" height="41">
+                  </div>
+                </div>
+                <h4 class="plan-card__name">個人事業主</h4>
+                <p class="plan-card__badge">（10時間／月まで）</p>
+                <p class="plan-card__label">月額</p>
+                <p class="plan-card__price">¥30,000〜</p>
+                <p class="plan-card__note">日常の経理業務対応・稼働簿記による記帳・請求書対応等</p>
+              </article>
+            </li>
+            <!-- ループ終了 -->
+            <li class="plan__item">
+              <article class="plan-card plan-card--large" aria-label="個人事業主">
+                <div class="plan-card__icon-group">
+                  <div class="plan-card__icon" aria-hidden="true">
+                    <img src="./assets/images/common/plan-icon01.svg" alt="" width="41" height="41">
+                  </div>
+                </div>
+                <h4 class="plan-card__name">個人事業主</h4>
+                <p class="plan-card__badge">（10時間／月まで）</p>
+                <p class="plan-card__label">月額</p>
+                <p class="plan-card__price">¥30,000〜</p>
+                <p class="plan-card__note">日常の経理業務対応・稼働簿記による記帳・請求書対応等</p>
+              </article>
+            </li>
+
+            <li class="plan__item">
+              <article class="plan-card plan-card--large" aria-label="個人事業主">
+                <div class="plan-card__icon-group">
+                  <div class="plan-card__icon" aria-hidden="true">
+                    <img src="./assets/images/common/plan-icon01.svg" alt="" width="41" height="41">
+                  </div>
+                </div>
+                <h4 class="plan-card__name">個人事業主</h4>
+                <p class="plan-card__badge">（10時間／月まで）</p>
+                <p class="plan-card__label">月額</p>
+                <p class="plan-card__price">¥30,000〜</p>
+                <p class="plan-card__note">日常の経理業務対応・稼働簿記による記帳・請求書対応等</p>
+              </article>
+            </li>
+
+            <li class="plan__item">
+              <article class="plan-card plan-card--large" aria-label="個人事業主">
+                <div class="plan-card__icon-group">
+                  <div class="plan-card__icon" aria-hidden="true">
+                    <img src="./assets/images/common/plan-icon01.svg" alt="" width="41" height="41">
+                  </div>
+                </div>
+                <h4 class="plan-card__name">個人事業主</h4>
+                <p class="plan-card__badge">（10時間／月まで）</p>
+                <p class="plan-card__label">月額</p>
+                <p class="plan-card__price">¥30,000〜</p>
+                <p class="plan-card__note">日常の経理業務対応・稼働簿記による記帳・請求書対応等</p>
+              </article>
+            </li>
+          </ul>
+        </section>
+
+        <!-- plan セクション内の末尾に配置 -->
+        <section class="plan__cta" aria-label="ご相談CallToAction">
+          <div class="plan__cta-group">
+            <div class="plan__cta-visual">
+              <img src="./assets/images/common/plan-illustration01.webp" alt="親子が歩く様子のイラスト" width="588" height="882"
+                class="plan__cta-image">
+              <img src="./assets/images/common/plan-illustration02.webp" alt="ノートパソコンを片手に持って歩いている女性がこちらを振り向いて話しかけている様子"
+                width="540" height="810" class="plan__cta-image">
+              <!-- <img src="./assets/images/common/plan-illustration03.webp" alt="女性と一緒にファイルを左手で抱えて歩いている女性の様子" width="561"
+                height="842" class="plan__cta-image"> -->
+
+              <!-- 吹き出し -->
+              <p class="plan-cta__bubble">
+                お困りごとは<br>ママチームに<br>おまかせ！
+              </p>
+            </div>
+
+            <p class="plan-cta__action">
+              <a href="#" class="button">無料で相談する</a>
+            </p>
+          </div>
+        </section>
+
+      </div>
+    </section>
+
+    <!-- マンガ2 -->
+    <section class="manga" aria-label="サービスを受けることによって期待されるビジョン">
+      <div class="manga__inner inner">
+        <div class="heading-wrap heading-wrap--center">
+          <h2 class="heading heading__title">マンガでわかる事業内容</h2>
+        </div>
+
+        <ol class="manga__list">
+          <li class="manga__item">
+            <!-- <figure class="manga__figure">
+                  <picture>
+                    <source type="image/webp" srcset="images/manga-01.webp" />
+                    <img class="manga__image"
+                         src="images/manga-01.png"
+                         alt="1コマ目：相談内容のヒアリングを行う場面"
+                         loading="lazy" width="640" height="640">
+                  </picture> -->
+            <!-- <figcaption class="manga__caption">ヒアリング</figcaption>
+                </figure> -->
+          </li>
+
+          <li class="manga__item">
+            <!-- <figure class="manga__figure">
+                  <picture>
+                    <source type="image/webp" srcset="images/manga-02.webp" />
+                    <img class="manga__image"
+                         src="images/manga-02.png"
+                         alt="2コマ目：課題の整理とご提案"
+                         loading="lazy" width="640" height="640">
+                  </picture>
+                  <figcaption class="manga__caption">課題整理</figcaption>
+                </figure> -->
+          </li>
+
+          <li class="manga__item">
+            <!-- <figure class="manga__figure">
+                  <picture>
+                    <source type="image/webp" srcset="images/manga-03.webp" />
+                    <img class="manga__image"
+                         src="images/manga-03.png"
+                         alt="3コマ目：実装と運用の開始"
+                         loading="lazy" width="640" height="640">
+                  </picture>
+                  <figcaption class="manga__caption">実装・運用</figcaption>
+                </figure> -->
+          </li>
+
+          <li class="manga__item">
+            <!-- <figure class="manga__figure">
+                  <picture>
+                    <source type="image/webp" srcset="images/manga-04.webp" />
+                    <img class="manga__image"
+                         src="images/manga-04.png"
+                         alt="4コマ目：効果検証と改善"
+                         loading="lazy" width="640" height="640">
+                  </picture>
+                  <figcaption class="manga__caption">改善</figcaption>
+                </figure> -->
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="faq" class="faq">
+      <div class="faq__inner inner">
+        <div class="heading-wrap heading-wrap--center">
+          <h2 class="faq__title heading heading__title">よくある質問</h2>
+        </div>
+
+        <div class="faq__lists">
+          <!-- ループ開始 -->
+          <dl class="faq__list faq-list">
+            <dt class="faq-list__question">
+              <span class="faq-list__badge">Q</span>
+              一度話を聞いてみたいのですが相談料はかかりますでしょうか？
+            </dt>
+            <dd class="faq-list__answer">
+              <span class="faq-list__badge faq-list__badge--answer">A</span>
+              お問い合わせいただいた際に、こちらからヒアリングシートをお送りします。そちらにご回答いただけますとスムーズに進行することができますので、ご協力をお願いいたします。
+            </dd>
+          </dl>
+          <!-- ループ終了 -->
+
+          <dl class="faq__list faq-list">
+            <dt class="faq-list__question">
+              <span class="faq-list__badge">Q</span>
+              一度話を聞いてみたいのですが相談料はかかりますでしょうか？
+            </dt>
+            <dd class="faq-list__answer">
+              <span class="faq-list__badge faq-list__badge--answer">A</span>
+              お問い合わせいただいた際に、こちらからヒアリングシートをお送りします。そちらにご回答いただけますとスムーズに進行することができますので、ご協力をお願いいたします。
+            </dd>
+          </dl>
+          <dl class="faq__list faq-list">
+            <dt class="faq-list__question">
+              <span class="faq-list__badge">Q</span>
+              一度話を聞いてみたいのですが相談料はかかりますでしょうか？
+            </dt>
+            <dd class="faq-list__answer">
+              <span class="faq-list__badge faq-list__badge--answer">A</span>
+              お問い合わせいただいた際に、こちらからヒアリングシートをお送りします。そちらにご回答いただけますとスムーズに進行することができますので、ご協力をお願いいたします。
+            </dd>
+          </dl>
+          <dl class="faq__list faq-list">
+            <dt class="faq-list__question">
+              <span class="faq-list__badge">Q</span>
+              一度話を聞いてみたいのですが相談料はかかりますでしょうか？
+            </dt>
+            <dd class="faq-list__answer">
+              <span class="faq-list__badge faq-list__badge--answer">A</span>
+              お問い合わせいただいた際に、こちらからヒアリングシートをお送りします。そちらにご回答いただけますとスムーズに進行することができますので、ご協力をお願いいたします。
+            </dd>
+          </dl>
+
+          <dl class="faq__list faq-list">
+            <dt class="faq-list__question">
+              <span class="faq-list__badge">Q</span>
+              一度話を聞いてみたいのですが相談料はかかりますでしょうか？
+            </dt>
+            <dd class="faq-list__answer">
+              <span class="faq-list__badge faq-list__badge--answer">A</span>
+              お問い合わせいただいた際に、こちらからヒアリングシートをお送りします。そちらにご回答いただけますとスムーズに進行することができますので、ご協力をお願いいたします。
+            </dd>
+          </dl>
+        </div>
+
+        <!-- ======================
+          アコーディオン化用
+        ======================= -->
+        <!-- <div class="faq__accordion accordion js-accordion">
+          <div class="accordion__container">
+            <div class="accordion__item js-accordion__item">
+              <div class="accordion__title js-accordion__title">
+                <p class="accordion__title-text">一度話を聞いてみたいのですが相談料はかかりますでしょうか？&#63;</p>
+              </div>
+              <div class="accordion__content js-accordion__content">
+                <p class="accordion__text">
+                  お問い合わせいただいた際に、こちらからヒアリングシートをお送りします。こちらに回答いただけますとスムーズに進行することができますので、ご対応をお願いいたします。</p>
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+      </div>
+    </section>
+
+    <section class="contact" aria-labelledby="contact-title">
+      <div class="contact__inner inner">
+        <div class="heading-wrap heading-wrap--center">
+          <h2 id="contact-title" class="contact__title heading heading__title">お問合せ</h2>
+        </div>
+
+        <p class="contact__text">
+          お見積り・ご相談をご希望の方は、<br>
+          下のLINEからお問い合わせください。
+        </p>
+
+        <figure class="contact__qr">
+          <img src="./assets/images/common/LINE.jpg" alt="LINE公式アカウントのQRコード（スマートフォンで読み取ってください）" width="125" height="124"
+            loading="lazy" decoding="async" class="contact__qr-image">
+          <figcaption class="contact__qr-caption">LINEでお問い合わせ</figcaption>
+        </figure>
+
+        <!-- 代替導線：クリックで開けるリンク（PC・QR未対応ユーザー向け） -->
+        <!-- <p class="contact__actions">
+          <a href="https://lin.ee/xxxxxxxx" target="_blank" rel="noopener">
+            LINEで友だち追加
+          </a>
+        </p> -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <p class="footer__logo">
+        <!-- トップへ戻す導線にする場合 -->
+        <a href="#" class="footer__logo-link" aria-label="Hinataトップへ">
+          <img src="./assets/images/common/footer-logo.svg" alt="Hinata" width="83" height="64" decoding="async"
+            class="footer__logo-image">
+        </a>
+      </p>
+      <small class="footer__copyright">
+        <span aria-hidden="true">©</span>
+        <span class="footer__year">2025</span>
+        <span class="footer__brand">hinata</span>
+      </small>
+    </div>
   </footer>
+
 </body>
 
 </html>

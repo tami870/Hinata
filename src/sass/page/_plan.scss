@@ -1,0 +1,98 @@
+@use "global" as *;
+
+.plan {
+  padding-top: rem(100);
+  padding-bottom: rem(120);
+  background-color: $background-white;
+}
+
+.plan__inner {
+  padding-left: rem(71);
+  padding-right: rem(77);
+}
+
+.plan__title {
+}
+
+.plan__group {
+}
+
+.plan-group-label {
+  margin-top: rem(92);
+  margin: 0 auto;
+}
+
+.plan__group--sub-label {
+  margin-top: rem(162);
+}
+
+.plan__items {
+  margin-top: rem(100);
+  display: flex;
+  align-items: center;
+}
+
+.plan__items--large {
+  margin-top: rem(60);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: rem(52);
+
+  @include mq(md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.plan__item {
+  flex: 1;
+}
+
+.plan__cta {
+  margin-top: rem(152);
+  position: relative;
+}
+
+.plan__cta-group {
+}
+
+.plan__cta-visual {
+  display: flex;
+  align-items: flex-end;
+}
+
+.plan__cta-image {
+  width: 100%;
+}
+
+.plan-cta__bubble {
+  background-color: $background-green;
+  color: $black2;
+  border-radius: 50%;
+  width: rem(243);
+  height: rem(243);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: rem(28);
+  font-weight: $bold;
+  line-height: 1.5;
+  position: absolute;
+  top: rem(-20);
+  left: 40%;
+}
+
+.plan-cta__bubble::after {
+  content: "";
+  position: absolute;
+  bottom: rem(-10); // しっぽの位置
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: rem(10) rem(8) 0 rem(8);
+  border-style: solid;
+  border-color: $background-green transparent transparent transparent;
+}
+
+.plan-cta__action {
+  text-align: center;
+}

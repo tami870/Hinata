@@ -3,7 +3,7 @@
 // インナー幅設定
 // コンテンツのインナー幅（最も共通の幅が多い部分）
 $inner: 1275px;
-// ※キュンパス幅ではなくインナーの幅を指す
+// ※キャンパス幅ではなくインナーの幅を指す
 
 // 余白
 $padding-pc: 25px;
@@ -42,6 +42,7 @@ $black2: #333333;
 $white: #ffffff;
 $white2: #dfefea;
 $white3: #f6f4e9;
+$background-white: #fffeef;
 $gray: #d9d9d9;
 $orange: #ff8533;
 $red: #d24322;
@@ -54,9 +55,8 @@ $background-green2: #17403c;
 // memo:Xポスト配色一覧
 $mint: #8ad0bb;
 $chocolate: #7e412a;
-$white2: #fffeef;
-$strawberry: #e66684;
-$green: #488234;
-$strawberry: #91cf98;
-$strawberry: #d4e7ba;
-$strawberry: #fa7070;
+$red20: #e66684;
+$green10: #488234;
+$green20: #91cf98;
+$green30: #d4e7ba;
+$red20: #fa7070;

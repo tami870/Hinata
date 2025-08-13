@@ -1,0 +1,34 @@
+@use "global" as *;
+
+.contact {
+  padding-top: rem(80);
+  padding-bottom: rem(92);
+}
+
+.contact__inner {
+}
+
+.contact__title {
+}
+
+.contact__text {
+  margin-top: rem(40);
+  text-align: center;
+}
+
+.contact__qr {
+  margin: rem(48) auto 0;
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  gap: rem(8);
+}
+
+.contact__qr-image {
+  max-width: rem(125);
+}
+
+.contact__qr-caption {
+  font-size: rem(14);
+  color: $black2;
+}

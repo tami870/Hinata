@@ -1,0 +1,55 @@
+@use "global" as *;
+
+.introduction {
+  background-color: $background-green;
+  padding-top: rem(80);
+  padding-bottom: rem(89);
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.25);
+}
+
+.introduction__inner {
+  padding-left: rem(75);
+  padding-right: rem(75);
+}
+
+.introduction__content {
+  display: flex;
+  align-items: center;
+}
+
+.introduction__images {
+  display: flex;
+  align-items: center;
+}
+
+.introduction__image {
+  max-width: rem(242);
+  width: 100%;
+  border-radius: 50%;
+}
+
+.introduction__image:not(:first-of-type) {
+  margin-left: rem(64);
+}
+
+.introduction__text-area {
+  margin-left: rem(105);
+  font-family: $third-font-family;
+  font-weight: $bold;
+}
+
+.introduction__title {
+  font-size: rem(24);
+  line-height: 1.7917;
+  color: $black;
+}
+
+.introduction__text {
+  margin-top: rem(18);
+  font-size: rem(16);
+  line-height: 2;
+}
+
+.introduction__button {
+  margin-top: rem(26);
+}

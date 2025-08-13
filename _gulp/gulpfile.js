@@ -17,8 +17,8 @@ const imageminMozjpeg = require("imagemin-mozjpeg"); // JPEGを最適化する�
 const imageminPngquant = require("imagemin-pngquant"); // PNGを最適化するためのモジュール
 const changed = require("gulp-changed"); // 変更されたファイルのみを対象にするためのモジュール
 const del = require("del"); // ファイルやディレクトリを削除するためのモジュール
-const webp = require('gulp-webp');//webp変換
-const rename = require('gulp-rename');//ファイル名変更
+const webp = require("gulp-webp"); //webp変換
+const rename = require("gulp-rename"); //ファイル名変更
 
 // 読み込み先
 const srcPath = {
@@ -37,7 +37,15 @@ const destPath = {
   html: "../dist/",
 };
 
-const browsers = ["last 2 versions", "> 5%", "ie = 11", "not ie <= 10", "ios >= 8", "and_chr >= 5", "Android >= 5"];
+const browsers = [
+  "last 2 versions",
+  "> 5%",
+  "ie = 11",
+  "not ie <= 10",
+  "ios >= 8",
+  "and_chr >= 5",
+  "Android >= 5",
+];
 
 // HTMLファイルのコピー
 const htmlCopy = () => {
@@ -53,7 +61,10 @@ const cssSass = () => {
       // エラーハンドリングを設定
       .pipe(
         plumber({
-          errorHandler: notify.onError("Error:<%= error.message %>"),
+          errorHandler: function (err) {
+            console.log("Error:", err.message);
+            this.emit("end");
+          },
         })
       )
       // Sassのパーシャル（_ファイル）を自動的にインポート
@@ -76,11 +87,12 @@ const cssSass = () => {
       )
       // CSSプロパティをアルファベット順にソートし、未来のCSS構文を使用可能に
       .pipe(
-        postcss([cssdeclsort({
-          order: "alphabetical"
-        })]
-        ),
-        postcssPresetEnv({ browsers: 'last 2 versions' })
+        postcss([
+          cssdeclsort({
+            order: "alphabetical",
+          }),
+        ]),
+        postcssPresetEnv({ browsers: "last 2 versions" })
       )
       // メディアクエリを統合
       .pipe(mmq())
@@ -88,13 +100,13 @@ const cssSass = () => {
       .pipe(sourcemaps.write("./"))
       // コンパイル済みのCSSファイルを出力先に保存
       .pipe(dest(destPath.css))
-      // Sassコンパイルが完了したことを通知
-      .pipe(
-        notify({
-          message: "Sassをコンパイルしました！",
-          onLast: true,
-        })
-      )
+    // Sassコンパイルが完了したことを通知
+    // .pipe(
+    //   notify({
+    //     message: "Sassをコンパイルしました！",
+    //     onLast: true,
+    //   })
+    // )
   );
 };
 
@@ -130,7 +142,7 @@ const imgImagemin = () => {
         )
       )
       .pipe(dest(destPath.img))
-      .pipe(webp())//webpに変換
+      .pipe(webp()) //webpに変換
       // 圧縮済みの画像ファイルを出力先に保存
       .pipe(dest(destPath.img))
   );
@@ -144,7 +156,10 @@ const jsBabel = () => {
       // エラーハンドリングを設定
       .pipe(
         plumber({
-          errorHandler: notify.onError("Error: <%= error.message %>"),
+          errorHandler: function (err) {
+            console.log("Error:", err.message);
+            this.emit("end");
+          },
         })
       )
       // Babelでトランスパイル（ES6からES5へ変換）
@@ -184,7 +199,10 @@ const watchFiles = () => {
 };
 
 // ブラウザシンク付きの開発用タスク
-exports.default = series(series(cssSass, jsBabel, imgImagemin, htmlCopy), parallel(watchFiles, browserSyncFunc));
+exports.default = series(
+  series(cssSass, jsBabel, imgImagemin, htmlCopy),
+  parallel(watchFiles, browserSyncFunc)
+);
 
 // 本番用タスク
 exports.build = series(clean, cssSass, jsBabel, imgImagemin, htmlCopy);

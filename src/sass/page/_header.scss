@@ -1,0 +1,75 @@
+@use "global" as *;
+
+.header {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: rem(105);
+  background-color: $white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.22);
+}
+
+// .header--scrolled {
+//   background-color: $white;
+// }
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  height: inherit;
+  padding-left: rem(95);
+  padding-right: rem(72);
+
+  @include mq(md) {
+    padding-left: $padding-sp;
+    padding-right: $padding-sp;
+  }
+}
+
+.header__title {
+  margin-right: auto;
+}
+
+.header__logo {
+  display: block;
+  width: clamp(rem(100), 18vw, rem(160));
+  height: auto;
+
+  @include mq(md) {
+    width: rem(132);
+  }
+}
+
+.header__nav {
+  height: inherit;
+}
+
+.header__items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: inherit;
+}
+
+.header__item {
+  height: inherit;
+}
+
+.header__item:not(:first-child) {
+  margin-left: rem(75);
+}
+
+.header__link {
+  display: inline-block;
+  font-family: $base-font-family;
+  font-size: rem(16);
+  letter-spacing: 0.05em;
+  font-weight: $medium;
+  color: $black2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: inherit;
+}

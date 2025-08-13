@@ -1,9 +1,27 @@
 @use "global" as *;
 
 .heading {
+  display: inline-block;
   font-family: $fourth-font-family;
   font-size: rem(48);
   font-weight: $bold;
   color: $black2;
   border-bottom: 3px solid $black2;
+}
+
+// 将来の拡張用
+.heading__title {
+}
+
+// wrapper用（配置のみ担当）
+.heading-wrap {
+  text-align: left;
+}
+
+.heading-wrap--center {
+  text-align: center;
+}
+
+.heading-wrap--right {
+  text-align: right;
 }

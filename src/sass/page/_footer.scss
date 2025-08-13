@@ -1,0 +1,39 @@
+@use "global" as *;
+
+.footer {
+  padding-top: rem(47);
+  padding-bottom: rem(32);
+  background-color: $background-green2;
+  text-align: center;
+}
+
+.footer__inner {
+  max-width: rem(1080);
+  margin: 0 auto;
+  display: grid;
+  justify-items: center;
+  row-gap: rem(12);
+  text-align: center;
+}
+
+.footer__logo {
+  margin: 0;
+}
+
+.footer__logo-link {
+  display: inline-block;
+}
+
+.footer__logo-image {
+  display: block;
+  width: rem(83);
+  height: auto;
+}
+
+.footer__copyright {
+  margin-top: rem(40);
+  font-size: rem(10);
+  font-weight: $regular;
+  color: $white;
+  text-align: center;
+}
