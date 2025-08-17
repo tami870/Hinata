@@ -10,6 +10,7 @@
 
   @include mq(md) {
     font-size: clamp(rem(16), 5.33vw, rem(36));
+    border-bottom: 1px solid $black2;
   }
 }
 

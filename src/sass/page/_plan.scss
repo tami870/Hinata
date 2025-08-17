@@ -57,6 +57,7 @@
   gap: clamp(30px, 3.61vw, 55px);
   margin-top: rem(60);
   height: auto;
+
   @include mq(md) {
     grid-template-columns: 1fr;
     margin-top: rem(43);
@@ -69,16 +70,17 @@
 
 .plan__item {
   height: 100%;
-
-  @include mq(md) {
-    margin-top: rem(25);
-  }
+  display: flex; //追加
 }
 
 .plan__cta {
-  margin-top: rem(152);
   height: rem(825);
   position: relative;
+
+  @include mq(md) {
+    margin-top: rem(101);
+    height: clamp(rem(350), 146.13vw, rem(400));
+  }
 }
 
 .plan__cta-group {
@@ -89,7 +91,6 @@
 }
 
 .plan__cta-visual {
-  margin-top: rem(152);
   display: flex;
   align-items: flex-end;
   position: relative;
@@ -97,7 +98,24 @@
   height: inherit;
 
   @include mq(md) {
-    margin-top: rem(101);
+    justify-content: center;
+  }
+}
+
+.plan__cta-image-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  @include mq(md) {
+    max-width: rem(350);
+  }
+}
+
+.plan__cta-image {
+  @include mq(md) {
+    width: auto;
+    max-width: rem(213);
   }
 }
 
@@ -106,7 +124,7 @@
   height: auto;
 }
 
-.plan__cta-image:nth-of-type(1) {
+.plan__cta-image--main {
   position: absolute;
   left: 0%;
   bottom: -14.5%;
@@ -115,8 +133,7 @@
   // aspect-ratio: 516 / 774;
 
   @include mq(md) {
-    left: -0.8%;
-    bottom: -15%;
+    display: none;
   }
 
   @include mq(lg) {
@@ -130,31 +147,33 @@
   }
 }
 
-.plan__cta-image:nth-of-type(2) {
+.plan__cta-image--person1 {
   position: absolute;
-  right: 13%;
-  bottom: -24.3%;
+  right: 11%;
+  bottom: -26.2%;
   width: clamp(18rem, 37.5vw, 33.75rem);
   z-index: 10;
   // aspect-ratio: 540 / 810;
 
   @include mq(md) {
-    right: 2%;
-    bottom: -10%;
+    // right: rem(60);
+    // bottom: rem(10);
+    right: 20%;
+    bottom: 2.5%;
   }
 
   @include mq(lg) {
-    right: 15%;
-    bottom: -25%;
+    bottom: -20%;
+    right: 17%;
   }
 
   @include mq(xl) {
+    bottom: -21.2%;
     right: 11%;
-    bottom: -26.2%;
   }
 }
 
-.plan__cta-image:nth-of-type(3) {
+.plan__cta-image--person2 {
   position: absolute;
   right: -1.5%;
   bottom: -26.6%;
@@ -163,18 +182,20 @@
   // aspect-ratio: 561 / 842;
 
   @include mq(md) {
+    // bottom: rem(5);
+    // right: rem(-10);
+    bottom: 1.25%;
     right: 0%;
-    bottom: -12%;
   }
 
   @include mq(lg) {
-    right: -2.74%;
-    bottom: -27.5%;
+    bottom: -21.5%;
+    right: 0%;
   }
 
   @include mq(xl) {
-    right: -7.2%;
-    bottom: -29.4%;
+    bottom: -23.4%;
+    right: -7%;
   }
 }
 
@@ -192,17 +213,21 @@
   font-weight: $bold;
   line-height: 1.8;
   position: absolute;
-  top: -15%;
+  top: 16%;
   left: 37%;
 
   @include mq(md) {
-    top: -8%;
-    left: -32%;
+    width: rem(96);
+    height: rem(96);
+    font-size: rem(12);
+    line-height: 1.5;
+    top: 0%;
+    left: 5.5%;
   }
 
   @include mq(lg) {
-    top: -10.7%;
-    left: 33.9%;
+    top: 18%;
+    left: 35.5%;
   }
 }
 
@@ -212,9 +237,16 @@
   bottom: 12%;
   right: -7%;
   transform: rotate(-45deg);
-  border-width: rem(60) rem(16) 0 rem(44);
+  border-width: rem(44) rem(16) 0 rem(44);
   border-style: solid;
   border-color: $background-green transparent transparent transparent;
+
+  @include mq(md) {
+    bottom: 20%;
+    right: -12%;
+    border-width: rem(16) rem(12.8) 0 rem(9.6);
+    transform: rotate(-61deg);
+  }
 }
 
 .plan-cta__action {

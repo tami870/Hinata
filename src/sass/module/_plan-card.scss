@@ -3,8 +3,7 @@
 .plan-card {
   padding-top: rem(35);
   padding-bottom: rem(30);
-  width: clamp(235px, 27.57vw, 400px);
-  // height: 100%;
+  width: clamp(rem(235), 27.57vw, rem(400));
   height: clamp(rem(350), 26.39vw, rem(450));
   background-color: $white;
   border-radius: rem(20);
@@ -58,8 +57,16 @@
 
 .plan-card__icon img {
   display: block;
-  width: clamp(rem(32), 4vw, rem(41));
-  height: clamp(rem(32), 4vw, rem(41));
+  width: auto;
+  height: auto;
+
+  @include mq(lg) {
+    width: 60%;
+  }
+
+  @include mq(md) {
+    width: 46.77%;
+  }
 }
 
 .plan-card > .plan-card__icon {
