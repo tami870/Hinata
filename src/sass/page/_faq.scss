@@ -2,8 +2,13 @@
 
 .faq {
   padding-top: rem(100);
-  padding-bottom: rem(101);
+  padding-bottom: rem(100);
   background-color: $background-white;
+
+  @include mq(md) {
+    padding-top: rem(80);
+    padding-bottom: rem(80);
+  }
 }
 
 .faq__inner {
@@ -14,6 +19,10 @@
 
 .faq__lists {
   margin-top: rem(63);
+
+  @include mq(md) {
+    margin-top: rem(30);
+  }
 }
 
 .faq__list {
@@ -21,4 +30,8 @@
 
 .faq__list:not(:first-of-type) {
   margin-top: rem(31.5);
+
+  @include mq(md) {
+    margin-top: rem(25);
+  }
 }

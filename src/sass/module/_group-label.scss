@@ -1,6 +1,6 @@
 @use "global" as *;
 
-.plan-group-label {
+.group-label {
   width: rem(248);
   padding: rem(11);
   font-size: rem(25);
@@ -10,7 +10,13 @@
   font-weight: $bold;
   letter-spacing: 0.1em;
   background-color: $background-green;
-  border-radius: 40px;
+  border-radius: rem(40);
   text-transform: uppercase;
   text-align: center;
+
+  @include mq(md) {
+    width: clamp(rem(120), 43.73vw, rem(220));
+    font-size: clamp(rem(12), 4.27vw, rem(20));
+    padding: clamp(rem(5), 1.39vw, rem(10));
+  }
 }

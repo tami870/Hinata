@@ -14,6 +14,12 @@
   border-radius: rem(10);
   position: relative;
   text-align: center;
+
+  @include mq(md) {
+    width: rem(345);
+    font-size: rem(16);
+    padding: rem(9.5);
+  }
 }
 
 .button:after {
@@ -26,4 +32,11 @@
   border-top: 1.61px solid $white;
   border-right: 1.61px solid $white;
   transform: translateY(-50%) rotate(45deg);
+
+  @include mq(md) {
+    top: rem(22);
+    right: rem(19.6);
+    width: rem(7);
+    height: rem(7);
+  }
 }

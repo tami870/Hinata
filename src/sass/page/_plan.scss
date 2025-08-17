@@ -4,65 +4,178 @@
   padding-top: rem(100);
   padding-bottom: rem(120);
   background-color: $background-white;
+
+  @include mq(md) {
+    padding-top: rem(80);
+    padding-bottom: rem(40);
+  }
 }
 
 .plan__inner {
-  padding-left: rem(71);
-  padding-right: rem(77);
 }
 
 .plan__title {
 }
 
 .plan__group {
+  margin-top: rem(87);
+
+  @include mq(md) {
+    margin-top: rem(31);
+  }
 }
 
-.plan-group-label {
-  margin-top: rem(92);
-  margin: 0 auto;
-}
-
-.plan__group--sub-label {
+.plan__group.plan__group--spaced {
   margin-top: rem(162);
+
+  @include mq(md) {
+    margin-top: rem(60);
+  }
+}
+
+.plan__group-label {
+  margin: 0 auto;
 }
 
 .plan__items {
   margin-top: rem(100);
   display: flex;
   align-items: center;
-}
-
-.plan__items--large {
-  margin-top: rem(60);
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: rem(52);
+  justify-content: center;
+  gap: clamp(30px, 3.75vw, 55px);
 
   @include mq(md) {
+    margin-top: rem(40);
+    flex-direction: column;
+  }
+}
+
+.plan__items.plan__items--large {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: stretch;
+  gap: clamp(30px, 3.61vw, 55px);
+  margin-top: rem(60);
+  height: auto;
+  @include mq(md) {
     grid-template-columns: 1fr;
+    margin-top: rem(43);
+    justify-content: center;
+    max-width: rem(400);
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
 .plan__item {
-  flex: 1;
+  height: 100%;
+
+  @include mq(md) {
+    margin-top: rem(25);
+  }
 }
 
 .plan__cta {
   margin-top: rem(152);
+  height: rem(825);
   position: relative;
 }
 
 .plan__cta-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: inherit;
 }
 
 .plan__cta-visual {
+  margin-top: rem(152);
   display: flex;
   align-items: flex-end;
+  position: relative;
+  width: 100%;
+  height: inherit;
+
+  @include mq(md) {
+    margin-top: rem(101);
+  }
 }
 
-.plan__cta-image {
+.plan__cta-image img {
   width: 100%;
   height: auto;
+}
+
+.plan__cta-image:nth-of-type(1) {
+  position: absolute;
+  left: 0%;
+  bottom: -14.5%;
+  width: clamp(21rem, 35.8vw, 32.25rem);
+  z-index: 10;
+  // aspect-ratio: 516 / 774;
+
+  @include mq(md) {
+    left: -0.8%;
+    bottom: -15%;
+  }
+
+  @include mq(lg) {
+    left: -0.8%;
+    bottom: -15%;
+  }
+
+  @include mq(xl) {
+    left: -1.7%;
+    bottom: -16.5%;
+  }
+}
+
+.plan__cta-image:nth-of-type(2) {
+  position: absolute;
+  right: 13%;
+  bottom: -24.3%;
+  width: clamp(18rem, 37.5vw, 33.75rem);
+  z-index: 10;
+  // aspect-ratio: 540 / 810;
+
+  @include mq(md) {
+    right: 2%;
+    bottom: -10%;
+  }
+
+  @include mq(lg) {
+    right: 15%;
+    bottom: -25%;
+  }
+
+  @include mq(xl) {
+    right: 11%;
+    bottom: -26.2%;
+  }
+}
+
+.plan__cta-image:nth-of-type(3) {
+  position: absolute;
+  right: -1.5%;
+  bottom: -26.6%;
+  width: clamp(18.75rem, 39vw, 35.06rem);
+  z-index: 10;
+  // aspect-ratio: 561 / 842;
+
+  @include mq(md) {
+    right: 0%;
+    bottom: -12%;
+  }
+
+  @include mq(lg) {
+    right: -2.74%;
+    bottom: -27.5%;
+  }
+
+  @include mq(xl) {
+    right: -7.2%;
+    bottom: -29.4%;
+  }
 }
 
 .plan-cta__bubble {
@@ -77,23 +190,34 @@
   text-align: center;
   font-size: rem(28);
   font-weight: $bold;
-  line-height: 1.5;
+  line-height: 1.8;
   position: absolute;
-  top: rem(-20);
-  left: 40%;
+  top: -15%;
+  left: 37%;
+
+  @include mq(md) {
+    top: -8%;
+    left: -32%;
+  }
+
+  @include mq(lg) {
+    top: -10.7%;
+    left: 33.9%;
+  }
 }
 
 .plan-cta__bubble::after {
   content: "";
   position: absolute;
-  bottom: rem(-10); // しっぽの位置
-  left: 50%;
-  transform: translateX(-50%);
-  border-width: rem(10) rem(8) 0 rem(8);
+  bottom: 12%;
+  right: -7%;
+  transform: rotate(-45deg);
+  border-width: rem(60) rem(16) 0 rem(44);
   border-style: solid;
   border-color: $background-green transparent transparent transparent;
 }
 
 .plan-cta__action {
   text-align: center;
+  z-index: 100;
 }

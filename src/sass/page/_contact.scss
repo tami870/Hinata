@@ -3,6 +3,12 @@
 .contact {
   padding-top: rem(80);
   padding-bottom: rem(92);
+  background-color: $background-gray;
+
+  @include mq(md) {
+    padding-top: rem(30);
+    padding-bottom: rem(53);
+  }
 }
 
 .contact__inner {
@@ -13,7 +19,15 @@
 
 .contact__text {
   margin-top: rem(40);
+  font-size: rem(16);
+  line-height: 1.5;
+  font-weight: $medium;
   text-align: center;
+  color: $black2;
+
+  @include mq(md) {
+    margin-top: rem(50);
+  }
 }
 
 .contact__qr {
@@ -22,10 +36,21 @@
   justify-items: center;
   text-align: center;
   gap: rem(8);
+
+  @include mq(md) {
+    margin-top: rem(25);
+  }
 }
 
 .contact__qr-image {
   max-width: rem(125);
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+
+  @include mq(md) {
+    max-width: rem(97);
+  }
 }
 
 .contact__qr-caption {

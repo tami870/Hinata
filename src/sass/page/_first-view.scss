@@ -1,93 +1,151 @@
 @use "global" as *;
 
 .first-view {
-  height: clamp(rem(420), 52vw, rem(665));
+  height: clamp(rem(420), 52vw, rem(700));
   padding-top: rem(77);
   background-color: $background-white;
+
+  @include mq(md) {
+    height: clamp(rem(300), 122.67vw, rem(670));
+    padding-top: rem(45);
+    padding-bottom: rem(26);
+  }
 }
 
 .first-view__inner {
   max-width: $inner + strip-unit($padding-pc) * 2;
-  padding-right: rem(40);
-  padding-left: rem(12);
+  padding-right: 40px;
+  padding-left: 12px;
   width: 100%;
   margin-right: auto;
   margin-left: auto;
 
   @include mq("md") {
-    padding-right: $padding-sp;
-    padding-left: $padding-sp;
+    padding-right: rem(15);
+    padding-left: rem(15);
   }
 }
 
 .first-view__content {
-  display: flex;
-  height: 100%;
   position: relative;
+  display: flex;
+  align-items: center;
+
+  @include mq(md) {
+    flex-direction: column;
+  }
 }
 
 .first-view__catchphrase {
-  /* 1440pxで501pxになるよう計算: 501/1440 = 0.348 → 34.8vw */
-  // width: clamp(rem(420), 34.8vw, rem(501));
-  // height: clamp(rem(420), 34.8vw, rem(501));
-  width: rem(501);
-  height: rem(501);
+  width: clamp(rem(450), 34.8vw, rem(501));
+  height: clamp(rem(450), 34.8vw, rem(501));
   background-color: $background-green;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   text-align: center;
   z-index: 10;
+
+  @include mq(md) {
+    width: clamp(rem(200), 62.67vw, rem(350));
+    height: clamp(rem(200), 62.67vw, rem(350));
+  }
 }
 
 .first-view__catchphrase-text {
-  // margin-top: clamp(rem(32), 3.6vw, rem(56));
   margin-top: rem(56);
-  font-weight: $bold;
   font-family: $second-font-family;
+  line-height: 1.5;
+  font-weight: $bold;
+
+  @include mq(md) {
+    margin-top: clamp(rem(20), 6.93vw, rem(36));
+  }
 }
 
 .first-view__catchphrase-part {
   display: block;
-  // font-size: clamp(rem(22), 2.6vw, rem(36));
   font-size: rem(36);
-  line-height: 1.5;
   color: $white;
+
+  @include mq(md) {
+    font-size: clamp(rem(12), 4.27vw, rem(24));
+  }
 }
 
 .first-view__catchphrase-part--strong {
+  margin-top: clamp(rem(16), 1.8vw, rem(23));
   display: block;
-  // margin-top: clamp(rem(16), 1.8vw, rem(23));
-  // font-size: clamp(rem(28), 3.6vw, rem(48));
-  margin-top: rem(23);
-  font-size: rem(48);
+  font-size: clamp(rem(28), 3.4vw, rem(48));
   color: $green;
+
+  @include mq(md) {
+    margin-top: rem(11);
+    margin-top: clamp(rem(9), 2.93vw, rem(15));
+    font-size: clamp(rem(18), 5.87vw, rem(36));
+  }
 }
 
+/* 画像群の“枠”：中央寄せの責任をここに集約 */
 .first-view__visuals {
+  /* —— PCは見出しの右側に浮かせるなら top を微調整 —— */
   position: absolute;
-  top: rem(40);
-  right: 0;
-  width: auto;
-  height: 100%;
-  z-index: 30;
-  flex-shrink: 0; /* flexコンテナの場合の縮小防止 */
-}
-
-.first-view__visual-image {
+  top: rem(64);
+  left: 66%;
+  transform: translateX(-50%);
   width: clamp(rem(480), 61.5vw, rem(819));
-  // width: rem(819);
-  height: auto;
-  display: block;
+  z-index: 30;
+
+  @include mq(md) {
+    /* SP（〜md）は真正面ど真ん中に据える */
+    top: 130%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: clamp(rem(250), 92vw, rem(550));
+  }
 }
 
-.first-view__visual-deco {
+/* 基準ボックス：子は常に中央に来る */
+.first-view__visual-wrapper {
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+/* デコレーション：wrapper基準で配置。中央寄せは壊さない */
+.first-view__visual-wrapper::after {
+  content: "";
   position: absolute;
-  top: rem(-120);
-  right: rem(-15);
-  // width: clamp(rem(140), 19.028vw, rem(274));
-  width: rem(274);
-  height: auto;
-  pointer-events: none;
+  inline-size: rem(274); // 横幅（論理プロパティ）
+  aspect-ratio: 1 / 1;
+  top: rem(-35);
+  right: rem(35);
+  background-image: url("../images/common/first-view02.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  pointer-events: none; /* クリックなどの邪魔をしない */
+
+  /* 位置：画像の右上あたりに“寄せる”
+     まず右上基準に置いて、微調整は translate で行うと読みやすい */
+  inset-block-start: 0; // top
+  inset-inline-end: 0; // right
+  transform: translate(20%, -35%);
   z-index: 20;
+
+  @include mq(md) {
+    inline-size: clamp(rem(100), 30.67vw, rem(163));
+    transform: translate(0, -195%);
+  }
+}
+
+/* メイン画像：サイズだけ面倒を見る。位置指定は一切しない */
+.first-view__visual-image {
+  display: block;
+  width: clamp(rem(480), 61.5vw, rem(819));
+  height: auto;
+
+  @include mq(md) {
+    width: clamp(rem(250), 92vw, rem(550));
+  }
 }

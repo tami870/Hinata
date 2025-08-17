@@ -10,6 +10,10 @@
   height: rem(105);
   background-color: $white;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.22);
+
+  @include mq(md) {
+    height: rem(80);
+  }
 }
 
 .header--scrolled {
@@ -28,11 +32,13 @@
 
 .header__logo {
   display: block;
-  width: clamp(rem(100), 18vw, rem(160));
+  width: clamp(rem(100), 11.1vw, rem(160));
   height: auto;
+  aspect-ratio: 160 / 83;
 
   @include mq(md) {
-    width: rem(132);
+    max-width: rem(86);
+    padding-left: rem(6);
   }
 }
 

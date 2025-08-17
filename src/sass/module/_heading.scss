@@ -7,10 +7,10 @@
   font-weight: $bold;
   color: $black2;
   border-bottom: 3px solid $black2;
-}
 
-// 将来の拡張用
-.heading__title {
+  @include mq(md) {
+    font-size: clamp(rem(16), 5.33vw, rem(36));
+  }
 }
 
 // wrapper用（配置のみ担当）

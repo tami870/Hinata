@@ -13,6 +13,10 @@
 .introduction__content {
   display: flex;
   align-items: center;
+
+  @include mq(md) {
+    flex-direction: column;
+  }
 }
 
 .introduction__images {
@@ -21,35 +25,60 @@
 }
 
 .introduction__image {
-  /* 1440pxで242pxになるよう計算: 242/1440 = 0.168 → 16.8vw */
-  max-width: clamp(rem(160), 16.85vw, rem(242));
+  max-width: clamp(rem(160), 16.85vw, rem(300));
   width: 100%;
   height: auto;
   border-radius: 50%;
+
+  @include mq(md) {
+    max-width: clamp(rem(100), 36.27vw, rem(150));
+  }
 }
 
 .introduction__image:not(:first-of-type) {
-  margin-left: clamp(rem(20), 4.5vw, rem(64));
+  margin-left: clamp(rem(35), 4.5vw, rem(65));
+
+  @include mq(md) {
+    margin-left: rem(38);
+  }
 }
 
 .introduction__text-area {
   margin-left: clamp(rem(28), 7.085vw, rem(105));
   font-family: $third-font-family;
   font-weight: $bold;
+
+  @include mq(md) {
+    margin-left: 0;
+    margin-top: rem(35);
+    text-align: center;
+  }
 }
 
 .introduction__title {
   font-size: clamp(rem(18), 2.2vw, rem(24));
   line-height: 1.7917;
   color: $black;
+
+  @include mq(md) {
+    font-size: clamp(rem(14), 4.27vw, rem(18));
+  }
 }
 
 .introduction__text {
   margin-top: clamp(rem(12), 1.6vw, rem(18));
   font-size: clamp(rem(14), 1.8vw, rem(16));
   line-height: 2;
+
+  @include mq(md) {
+    font-size: clamp(rem(10), 3.2vw, rem(14));
+  }
 }
 
 .introduction__button {
-  margin-top: clamp(rem(18), 2.2vw, rem(26));
+  margin-top: clamp(rem(22), 2.2vw, rem(30));
+
+  @include mq(md) {
+    margin-top: rem(40);
+  }
 }

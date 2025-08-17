@@ -3,7 +3,11 @@
 .manga {
   padding-block: clamp(24px, 6vw, 64px);
   background-color: $gray;
-  height: rem(1000); //仮
+  height: rem(1514); //仮
+
+  @include mq(md) {
+    height: rem(544);
+  }
 }
 
 .manga__inner {
