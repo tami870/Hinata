@@ -1,11 +1,10 @@
 @use "global" as *;
 
 .header {
-  position: fixed;
+  position: sticky;
   z-index: 1000;
   top: 0;
   left: 0;
-  right: 0;
   width: 100%;
   height: rem(105);
   background-color: $white;
@@ -14,10 +13,6 @@
   @include mq(md) {
     height: rem(80);
   }
-}
-
-.header--scrolled {
-  background-color: $white;
 }
 
 .header__inner {
@@ -55,14 +50,15 @@
 
 .header__item {
   height: inherit;
+  padding-right: rem(37); //クリック領域調整
+  padding-left: rem(38); //クリック領域調整
 }
 
-.header__item:not(:first-child) {
-  margin-left: rem(75);
+.header__item:last-child {
+  padding-right: 0; //クリック領域調整
 }
 
 .header__link {
-  display: inline-block;
   font-family: $base-font-family;
   font-size: rem(16);
   letter-spacing: 0.05em;
@@ -72,4 +68,8 @@
   align-items: center;
   justify-content: space-between;
   height: inherit;
+}
+
+.header__link:hover {
+  opacity: 0.8;
 }

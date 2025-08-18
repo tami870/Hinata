@@ -151,13 +151,11 @@
   position: absolute;
   right: 11%;
   bottom: -26.2%;
-  width: clamp(18rem, 37.5vw, 33.75rem);
+  width: clamp(18rem, 36vw, 33.75rem);
   z-index: 10;
   // aspect-ratio: 540 / 810;
 
   @include mq(md) {
-    // right: rem(60);
-    // bottom: rem(10);
     right: 20%;
     bottom: 2.5%;
   }
@@ -168,6 +166,7 @@
   }
 
   @include mq(xl) {
+    width: clamp(18rem, 37.5vw, 33.75rem);
     bottom: -21.2%;
     right: 11%;
   }
@@ -177,7 +176,7 @@
   position: absolute;
   right: -1.5%;
   bottom: -26.6%;
-  width: clamp(18.75rem, 39vw, 35.06rem);
+  width: clamp(18.75rem, 37vw, 35.06rem);
   z-index: 10;
   // aspect-ratio: 561 / 842;
 
@@ -194,8 +193,9 @@
   }
 
   @include mq(xl) {
+    width: clamp(18.75rem, 39vw, 35.06rem);
     bottom: -23.4%;
-    right: -7%;
+    right: -4.5%;
   }
 }
 
@@ -209,6 +209,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  font-family: $fourth-font-family;
   font-size: rem(28);
   font-weight: $bold;
   line-height: 1.8;

@@ -17,8 +17,8 @@ $base-font-family: "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN",
   "Yu Gothic", "Meiryo", "sans-serif";
 $second-font-family: "M PLUS Rounded 1c", "Hiragino Sans",
   "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", "sans-serif";
-$third-font-family: "Noto Serif JP", "Noto Serif", "Hiragino Mincho ProN",
-  "Yu Mincho", "MS PMincho", "serif";
+$third-font-family: "Noto Serif", "Hiragino Mincho ProN", "Yu Mincho",
+  "MS PMincho", "serif";
 $fourth-font-family: "Montserrat", "Arial", "Helvetica Neue", "Helvetica",
   "sans-serif";
 // ※検証ツールでしっかり反映されているか確認する
@@ -31,6 +31,7 @@ body {
 $regular: 400;
 $medium: 500;
 $bold: 700;
+$max-bold: 900;
 
 ////////////////////
 // 色の指定

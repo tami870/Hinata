@@ -45,8 +45,6 @@
 
 .introduction__text-area {
   margin-left: clamp(rem(28), 7.085vw, rem(105));
-  font-family: $third-font-family;
-  font-weight: $bold;
 
   @include mq(md) {
     margin-left: 0;
@@ -58,6 +56,7 @@
 .introduction__title {
   font-size: clamp(rem(18), 2.2vw, rem(24));
   line-height: 1.7917;
+  font-weight: $bold;
   color: $black;
 
   @include mq(md) {
@@ -69,6 +68,7 @@
   margin-top: clamp(rem(12), 1.6vw, rem(18));
   font-size: clamp(rem(14), 1.8vw, rem(16));
   line-height: 2;
+  font-weight: $max-bold;
 
   @include mq(md) {
     font-size: clamp(rem(10), 3.2vw, rem(14));
