@@ -105,6 +105,7 @@
 
 .plan-card__note {
   margin-top: rem(19);
+  font-family: $third-font-family;
   font-weight: $medium;
   line-height: 1.5;
   font-size: rem(16);
@@ -117,19 +118,12 @@
 }
 
 .plan-card--large .plan-card__name {
-  margin-top: rem(14);
-  font-family: $third-font-family;
   font-size: rem(24);
-  font-weight: $bold;
   // line-height: 2.0833;
   line-height: 1.5;
-  letter-spacing: 0.1em;
-  color: $black2;
 
   @include mq(md) {
     margin-top: rem(8);
-    font-size: rem(16);
-    line-height: 1.5;
   }
 }
 
@@ -162,24 +156,14 @@
 
 .plan-card--large .plan-card__price {
   margin-top: rem(14);
-  font-size: rem(48);
-  font-weight: $medium;
-  letter-spacing: 0.1em;
-  color: $red;
-  line-height: 1;
 
   @include mq(md) {
     margin-top: rem(3);
-    font-size: rem(36);
   }
 }
 
 .plan-card--large .plan-card__note {
   margin-top: rem(35);
-  font-weight: $regular;
-  line-height: 1.5;
-  font-size: rem(16);
-  color: $black2;
   text-align: left;
 
   @include mq(md) {
