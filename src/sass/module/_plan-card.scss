@@ -1,10 +1,9 @@
 @use "global" as *;
 
 .plan-card {
-  padding-top: rem(35);
-  padding-bottom: rem(30);
-  width: clamp(rem(235), 27.57vw, rem(400));
-  height: clamp(rem(350), 26.39vw, rem(450));
+  padding: rem(43.5);
+  width: clamp(rem(235), 27.5695vw, rem(400));
+  height: auto;
   background-color: $white;
   border-radius: rem(20);
   box-shadow: 4px 2px 17px rgba(0, 0, 0, 0.25);
@@ -14,14 +13,13 @@
     padding-top: clamp(rem(20), 5.87vw, rem(48));
     padding-bottom: clamp(rem(20), 5.87vw, rem(48));
     width: clamp(rem(200), 92vw, rem(400));
-    height: clamp(rem(250), 72.53vw, rem(350));
   }
 }
 
 .plan-card.plan-card--large {
-  padding: rem(35);
+  padding: rem(38);
   width: 100%;
-  height: rem(444);
+  height: auto;
   background-color: $white;
   border-radius: rem(20);
   box-shadow: 4px 2px 17px rgba(0, 0, 0, 0.25);
@@ -30,7 +28,6 @@
   @include mq(md) {
     padding: rem(20);
     width: clamp(rem(200), 92vw, rem(400));
-    height: clamp(rem(300), 89.6vw, rem(380));
   }
 }
 
@@ -84,7 +81,6 @@
 
   @include mq(md) {
     margin-top: rem(8);
-    // margin-top: rem(10);
     font-size: rem(16);
   }
 }
@@ -123,6 +119,7 @@
   line-height: 1.5;
 
   @include mq(md) {
+    font-size: rem(16);
     margin-top: rem(8);
   }
 }

@@ -19,6 +19,18 @@
   display: flex;
   align-items: center;
   height: inherit;
+
+  max-width: $inner + strip-unit($padding-pc) * 2;
+  padding-right: rem(10);
+  padding-left: rem(30);
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include mq("md") {
+    padding-right: $padding-sp;
+    padding-left: $padding-sp;
+  }
 }
 
 .header__title {
@@ -27,7 +39,7 @@
 
 .header__logo {
   display: block;
-  width: clamp(rem(100), 11.1vw, rem(160));
+  width: clamp(rem(100), 11.112vw, rem(160));
   height: auto;
   aspect-ratio: 160 / 83;
 
@@ -50,12 +62,12 @@
 
 .header__item {
   height: inherit;
-  padding-right: rem(37); //クリック領域調整
-  padding-left: rem(38); //クリック領域調整
+  padding-right: rem(37.5);
+  padding-left: rem(37.5);
 }
 
 .header__item:last-child {
-  padding-right: 0; //クリック領域調整
+  padding-right: 0;
 }
 
 .header__link {
@@ -71,5 +83,5 @@
 }
 
 .header__link:hover {
-  opacity: 0.8;
+  opacity: 0.7;
 }

@@ -1,7 +1,7 @@
 @use "global" as *;
 
 .first-view {
-  height: clamp(rem(420), 52vw, rem(700));
+  height: clamp(rem(420), 52vw, rem(665));
   padding-top: rem(77);
   background-color: $background-white;
 
@@ -15,7 +15,7 @@
 .first-view__inner {
   max-width: $inner + strip-unit($padding-pc) * 2;
   padding-right: 40px;
-  padding-left: 12px;
+  padding-left: rem(12);
   width: 100%;
   margin-right: auto;
   margin-left: auto;
@@ -86,18 +86,15 @@
   }
 }
 
-/* 画像群の“枠”：中央寄せの責任をここに集約 */
 .first-view__visuals {
-  /* —— PCは見出しの右側に浮かせるなら top を微調整 —— */
   position: absolute;
-  top: rem(64);
-  left: 66%;
+  top: 8.5%;
+  left: 67.6%;
   transform: translateX(-50%);
   width: clamp(rem(480), 61.5vw, rem(819));
   z-index: 30;
 
   @include mq(md) {
-    /* SP（〜md）は真正面ど真ん中に据える */
     top: 130%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -105,31 +102,24 @@
   }
 }
 
-/* 基準ボックス：子は常に中央に来る */
 .first-view__visual-wrapper {
   position: relative;
   display: grid;
   place-items: center;
 }
 
-/* デコレーション：wrapper基準で配置。中央寄せは壊さない */
 .first-view__visual-wrapper::after {
   content: "";
   position: absolute;
-  inline-size: rem(274); // 横幅（論理プロパティ）
+  inline-size: rem(274);
   aspect-ratio: 1 / 1;
-  top: rem(-35);
-  right: rem(35);
+  inset-block-start: -4.5%; // = top: -4.5%
+  inset-inline-end: 4%; // = right: 4%
   background-image: url("../images/common/first-view02.webp");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  pointer-events: none; /* クリックなどの邪魔をしない */
-
-  /* 位置：画像の右上あたりに“寄せる”
-     まず右上基準に置いて、微調整は translate で行うと読みやすい */
-  inset-block-start: 0; // top
-  inset-inline-end: 0; // right
+  pointer-events: none;
   transform: translate(20%, -35%);
   z-index: 20;
 
@@ -139,7 +129,6 @@
   }
 }
 
-/* メイン画像：サイズだけ面倒を見る。位置指定は一切しない */
 .first-view__visual-image {
   display: block;
   width: clamp(rem(480), 61.5vw, rem(819));

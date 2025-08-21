@@ -58,14 +58,15 @@
 .faq-list__answer {
   margin-top: rem(31.5);
   color: $black2;
-  font-size: rem(20);
+  font-size: rem(16);
 
   @include mq(md) {
     margin-top: rem(25);
     font-size: rem(14);
+    font-weight: $medium;
   }
 }
 
 .faq-list__badge--answer {
-  color: $red;
+  color: $red2;
 }

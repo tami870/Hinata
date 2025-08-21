@@ -39,14 +39,18 @@
 
 .plan__items {
   margin-top: rem(100);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: clamp(30px, 3.75vw, 55px);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, rem(345)), 1fr));
+  gap: clamp(rem(30), 3.04vw, rem(55));
 
   @include mq(md) {
     margin-top: rem(40);
     flex-direction: column;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    max-width: rem(400);
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -54,7 +58,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: stretch;
-  gap: clamp(30px, 3.61vw, 55px);
+  gap: clamp(rem(30), 2.778vw, rem(55));
   margin-top: rem(60);
   height: auto;
 
@@ -70,7 +74,7 @@
 
 .plan__item {
   height: 100%;
-  display: flex; //追加
+  display: flex;
 }
 
 .plan__cta {
@@ -181,8 +185,6 @@
   // aspect-ratio: 561 / 842;
 
   @include mq(md) {
-    // bottom: rem(5);
-    // right: rem(-10);
     bottom: 1.25%;
     right: 0%;
   }
