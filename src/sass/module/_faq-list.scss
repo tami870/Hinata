@@ -2,7 +2,7 @@
 
 .faq-list {
   background-color: $white2;
-  padding-top: rem(38);
+  padding-top: rem(34);
   padding-right: rem(30);
   padding-bottom: rem(32.5);
   padding-left: rem(40);
@@ -16,13 +16,20 @@
   }
 }
 
+// 仮
+.faq-list--second {
+  padding-top: rem(33);
+  padding-right: rem(30);
+  padding-bottom: rem(22);
+  padding-left: rem(40);
+}
+
 .faq-list__question,
 .faq-list__answer {
   display: grid;
-  grid-template-columns: rem(31.5) 1fr;
+  grid-template-columns: rem(33) 1fr;
   align-items: center;
-  column-gap: rem(43);
-  margin: 0;
+  column-gap: rem(55);
   font-family: $third-font-family;
   font-weight: $bold;
   line-height: 1.5;
@@ -34,7 +41,7 @@
 
 .faq-list__question {
   color: $green2;
-  font-size: rem(24);
+  font-size: rem(20);
 
   @include mq(md) {
     font-size: rem(14);

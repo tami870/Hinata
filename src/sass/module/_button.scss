@@ -10,7 +10,10 @@
   letter-spacing: 0.1em;
   box-shadow: 0 7.69px 11.53px 0 rgba(35, 19, 5, 0.23);
   background-color: $orange;
-  padding: rem(12);
+  padding-top: rem(12);
+  padding-right: rem(12);
+  padding-bottom: rem(12);
+  padding-left: 0;
   border-radius: rem(10);
   position: relative;
   text-align: center;
@@ -25,7 +28,7 @@
 .button:after {
   position: absolute;
   top: rem(31);
-  right: rem(27);
+  right: rem(34);
   width: rem(9);
   height: rem(9);
   content: "";

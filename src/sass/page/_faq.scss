@@ -1,7 +1,7 @@
 @use "global" as *;
 
 .faq {
-  padding-top: rem(100);
+  padding-top: rem(97);
   padding-bottom: rem(100);
   background-color: $background-white;
 
@@ -12,13 +12,24 @@
 }
 
 .faq__inner {
+  max-width: $inner + strip-unit($padding-pc) * 2;
+  padding-right: rem(12);
+  padding-left: rem(13);
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include mq(md) {
+    padding-right: $padding-sp;
+    padding-left: $padding-sp;
+  }
 }
 
 .faq__title {
 }
 
 .faq__lists {
-  margin-top: rem(63);
+  margin-top: rem(60);
 
   @include mq(md) {
     margin-top: rem(30);

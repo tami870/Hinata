@@ -1,7 +1,10 @@
 @use "global" as *;
 
 .plan-card {
-  padding: rem(43.5);
+  padding-top: rem(35);
+  padding-right: rem(35);
+  padding-bottom: rem(20);
+  padding-left: rem(35);
   width: clamp(rem(235), 27.5695vw, rem(400));
   height: auto;
   background-color: $white;
@@ -86,6 +89,7 @@
 }
 
 .plan-card__price {
+  padding-left: rem(22); //カンプ微調整
   margin-top: rem(2);
   font-size: rem(48);
   font-weight: $medium;
@@ -99,9 +103,19 @@
   }
 }
 
+.plan-card__note-group {
+  margin-top: rem(27);
+}
+
+// 2番目以降の”plan-card__note”
+.plan-card__note-group > :not(:first-child) {
+  margin-top: rem(8);
+  padding-top: rem(4);
+}
+
 .plan-card__note {
-  margin-top: rem(19);
-  font-family: $third-font-family;
+  padding-left: rem(5); //カンプ微調整
+  font-family: $base-font-family;
   font-weight: $medium;
   line-height: 1.5;
   font-size: rem(16);
@@ -114,9 +128,9 @@
 }
 
 .plan-card--large .plan-card__name {
+  margin-top: rem(12);
   font-size: rem(24);
-  // line-height: 2.0833;
-  line-height: 1.5;
+  line-height: 2.0833;
 
   @include mq(md) {
     font-size: rem(16);
@@ -125,11 +139,11 @@
 }
 
 .plan-card--large .plan-card__badge {
+  margin-top: rem(-3);
   font-size: rem(16);
   font-weight: $medium;
   color: $black2;
   line-height: 1.5;
-  margin-top: rem(12);
 
   @include mq(md) {
     margin-top: rem(5);
@@ -137,7 +151,6 @@
   }
 }
 
-/* 価格ラベル（「月額」） */
 .plan-card--large .plan-card__label {
   margin-top: rem(19);
   font-size: rem(20);
@@ -160,8 +173,10 @@
 }
 
 .plan-card--large .plan-card__note {
-  margin-top: rem(35);
+  margin-top: rem(38);
   text-align: left;
+  padding-left: rem(12);
+  padding-right: rem(60);
 
   @include mq(md) {
     margin-top: rem(25);

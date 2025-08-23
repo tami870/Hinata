@@ -2,12 +2,24 @@
 
 .introduction {
   background-color: $background-green;
-  padding-top: rem(80);
-  padding-bottom: rem(89);
-  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.25);
+  // padding-top: rem(86);
+  // padding-bottom: rem(88);
+  position: relative;
+  z-index: 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
 }
 
 .introduction__inner {
+  max-width: $inner + strip-unit($padding-pc) * 2;
+  padding-right: $padding-pc;
+  padding-left: rem(15);
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  @include mq("md") {
+    padding-right: $padding-sp;
+    padding-left: $padding-sp;
+  }
 }
 
 .introduction__content {
@@ -22,10 +34,12 @@
 .introduction__images {
   display: flex;
   align-items: center;
+  padding-top: rem(92);
+  padding-bottom: rem(89);
 }
 
 .introduction__image {
-  max-width: clamp(rem(160), 16.85vw, rem(300));
+  max-width: clamp(rem(160), 16.80556vw, rem(300));
   width: 100%;
   height: auto;
   border-radius: 50%;
@@ -36,7 +50,7 @@
 }
 
 .introduction__image:not(:first-of-type) {
-  margin-left: clamp(rem(35), 4.5vw, rem(65));
+  margin-left: clamp(rem(35), 4.5139vw, rem(80));
 
   @include mq(md) {
     margin-left: rem(38);
@@ -44,7 +58,9 @@
 }
 
 .introduction__text-area {
-  margin-left: clamp(rem(28), 7.085vw, rem(105));
+  margin-left: clamp(rem(28), 7.0139vw, rem(105));
+  padding-top: rem(80);
+  padding-bottom: rem(89);
 
   @include mq(md) {
     margin-left: 0;
@@ -55,7 +71,7 @@
 
 .introduction__title {
   font-size: clamp(rem(18), 2.2vw, rem(24));
-  line-height: 1.7917;
+  line-height: 1.7;
   font-weight: $bold;
   color: $black;
 
@@ -65,7 +81,7 @@
 }
 
 .introduction__text {
-  margin-top: clamp(rem(12), 1.6vw, rem(18));
+  margin-top: rem(18);
   font-size: clamp(rem(14), 1.8vw, rem(16));
   line-height: 2;
   font-weight: $max-bold;
@@ -76,7 +92,7 @@
 }
 
 .introduction__button {
-  margin-top: clamp(rem(22), 2.2vw, rem(30));
+  margin-top: clamp(rem(18), 2.2vw, rem(26));
 
   @include mq(md) {
     margin-top: rem(40);

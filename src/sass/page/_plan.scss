@@ -1,7 +1,7 @@
 @use "global" as *;
 
 .plan {
-  padding-top: rem(100);
+  padding-top: rem(95);
   padding-bottom: rem(120);
   background-color: $background-white;
 
@@ -12,13 +12,23 @@
 }
 
 .plan__inner {
+  max-width: $inner + strip-unit($padding-pc) * 2;
+  padding-right: rem(14);
+  padding-left: rem(13);
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  @include mq("md") {
+    padding-right: $padding-sp;
+    padding-left: $padding-sp;
+  }
 }
 
 .plan__title {
 }
 
 .plan__group {
-  margin-top: rem(87);
+  margin-top: rem(85);
 
   @include mq(md) {
     margin-top: rem(31);
@@ -26,7 +36,7 @@
 }
 
 .plan__group.plan__group--spaced {
-  margin-top: rem(162);
+  margin-top: rem(159);
 
   @include mq(md) {
     margin-top: rem(60);
@@ -58,7 +68,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: stretch;
-  gap: clamp(rem(30), 2.778vw, rem(55));
+  gap: clamp(rem(30), 3.75vw, rem(55));
   margin-top: rem(60);
   height: auto;
 
@@ -78,7 +88,7 @@
 }
 
 .plan__cta {
-  height: rem(825);
+  height: rem(886);
   position: relative;
 
   @include mq(md) {
@@ -129,6 +139,7 @@
 }
 
 .plan__cta-image--main {
+  // 1024px~1440px未満
   position: absolute;
   left: 0%;
   bottom: -14.5%;
@@ -137,17 +148,20 @@
   // aspect-ratio: 516 / 774;
 
   @include mq(md) {
+    // 768px未満
     display: none;
   }
 
   @include mq(lg) {
+    // 768px~1024px未満
     left: -0.8%;
     bottom: -15%;
   }
 
   @include mq(xl) {
-    left: -1.7%;
-    bottom: -16.5%;
+    // 1440px以上
+    left: -1.5%;
+    bottom: -12.5%;
   }
 }
 
@@ -171,8 +185,8 @@
 
   @include mq(xl) {
     width: clamp(18rem, 37.5vw, 33.75rem);
-    bottom: -21.2%;
-    right: 11%;
+    bottom: -19.5%;
+    right: 12%;
   }
 }
 
@@ -196,8 +210,8 @@
 
   @include mq(xl) {
     width: clamp(18.75rem, 39vw, 35.06rem);
-    bottom: -23.4%;
-    right: -4.5%;
+    bottom: -22.8%;
+    right: -5.9%;
   }
 }
 
@@ -216,8 +230,8 @@
   font-weight: $bold;
   line-height: 1.8;
   position: absolute;
-  top: 16%;
-  left: 37%;
+  top: 18.6%;
+  left: 36%;
 
   @include mq(md) {
     width: rem(96);
@@ -237,8 +251,8 @@
 .plan-cta__bubble::after {
   content: "";
   position: absolute;
-  bottom: 12%;
-  right: -7%;
+  bottom: 16.6%;
+  right: -7.7%;
   transform: rotate(-45deg);
   border-width: rem(44) rem(16) 0 rem(44);
   border-style: solid;

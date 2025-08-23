@@ -10,6 +10,15 @@
   }
 }
 
+// 仮
+.manga--second {
+  height: rem(1402);
+
+  @include mq(md) {
+    height: rem(544);
+  }
+}
+
 .manga__inner {
 }
 

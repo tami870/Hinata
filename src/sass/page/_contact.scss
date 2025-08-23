@@ -1,7 +1,7 @@
 @use "global" as *;
 
 .contact {
-  padding-top: rem(80);
+  padding-top: rem(103);
   padding-bottom: rem(92);
   background-color: $background-gray;
 
@@ -18,7 +18,7 @@
 }
 
 .contact__text {
-  margin-top: rem(40);
+  margin-top: rem(35);
   font-size: rem(16);
   line-height: 1.5;
   font-weight: $medium;
@@ -31,7 +31,10 @@
 }
 
 .contact__qr {
-  margin: rem(48) auto 0;
+  margin-top: rem(55);
+  margin-right: auto;
+  margin-bottom: 0;
+  margin-left: auto;
   display: grid;
   justify-items: center;
   text-align: center;

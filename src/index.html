@@ -112,7 +112,7 @@
     </section>
 
     <section class="introduction">
-      <div class="introduction__inner inner">
+      <div class="introduction__inner">
         <div class="introduction__content">
           <div class="introduction__images">
             <img src="./assets/images/common/introduction01.webp" alt="そろばんを手に、不安そうな表情を浮かべる男性のイラスト。"
@@ -196,7 +196,7 @@
     </section>
 
     <section id="plan" class="plan" aria-labelledby="plan-title">
-      <div class="plan__inner inner">
+      <div class="plan__inner">
         <div class="heading-wrap heading-wrap--center">
           <h2 id="plan-title" class="plan__title heading">Web×バックオフィス</h2>
         </div>
@@ -206,21 +206,23 @@
           <ul class="plan__items" role="list">
             <!-- ループ開始 -->
             <li class="plan__item">
-              <article class="plan-card" aria-label="シンプルプラン">
+              <article class="plan-card">
                 <div class="plan-card__icon-group">
                   <div class="plan-card__icon" aria-hidden="true">
                     <img src="./assets/images/common/plan-icon01.svg" alt="" width="41" height="41">
                   </div>
                 </div>
                 <h4 class="plan-card__name">シンプルプラン</h4>
-                <p class="plan-card__price">¥80,000〜</p>
-                <p class="plan-card__note">テンプレ固定（4P）</p>
+                <p class="plan-card__price">¥80,000~</p>
+                <div class="plan-card__note-group">
+                  <p class="plan-card__note">テンプレ固定(4P)</p>
+                </div>
               </article>
             </li>
             <!-- ループ終了 -->
 
             <li class="plan__item">
-              <article class="plan-card" aria-label="＋印刷物プラン">
+              <article class="plan-card">
                 <div class="plan-card__icon-group">
                   <div class="plan-card__icon" aria-hidden="true">
                     <img src="./assets/images/common/plan-icon01.svg" alt="" width="41" height="41">
@@ -230,13 +232,19 @@
                   </div>
                 </div>
                 <h4 class="plan-card__name">＋印刷物プラン</h4>
-                <p class="plan-card__price">¥100,000〜</p>
-                <p class="plan-card__note">テンプレ固定（4P）<br>名刺(100枚)+チラシ(300枚)</p>
+                <p class="plan-card__price">¥100,000~</p>
+                <!-- <p class="plan-card__note">テンプレ固定(4P)<br>名刺(100枚)+チラシ(300枚)</p> -->
+                <div class="plan-card__note-group">
+
+                  <p class="plan-card__note">テンプレ固定(4P)</p>
+                  <p class="plan-card__note">名刺(100枚)&ensp;+チラシ(300枚)</p>
+                </div>
+
               </article>
             </li>
 
             <li class="plan__item">
-              <article class="plan-card" aria-label="＋印刷物プラン＋SNSプラン">
+              <article class="plan-card">
                 <div class="plan-card__icon-group">
                   <div class="plan-card__icon" aria-hidden="true">
                     <img src="./assets/images/common/plan-icon01.svg" alt="" width="41" height="41">
@@ -249,9 +257,13 @@
                   </div>
                 </div>
                 <h4 class="plan-card__name">＋印刷物プラン＋SNSプラン</h4>
-                <p class="plan-card__price">¥150,000〜</p>
-                <p class="plan-card__note">テンプレ固定（4P）<br>名刺(100枚)
-                  +チラシ(300枚)<br>SNS(Instagram)</p>
+                <p class="plan-card__price">¥150,000~</p>
+                <div class="plan-card__note-group">
+
+                  <p class="plan-card__note">テンプレ固定(4P)</p>
+                  <p class="plan-card__note">名刺(100枚)+チラシ(300枚)</p>
+                  <p class="plan-card__note">SNS(Instagram)</p>
+                </div>
               </article>
             </li>
           </ul>
@@ -262,7 +274,7 @@
           <ul class="plan__items plan__items--large" role="list">
             <!-- ループ開始 -->
             <li class="plan__item">
-              <article class="plan-card plan-card--large" aria-label="個人事業主">
+              <article class="plan-card plan-card--large">
                 <div class="plan-card__icon-group">
                   <div class="plan-card__icon" aria-hidden="true">
                     <img src="./assets/images/common/plan-icon04.svg" alt="" width="41" height="45">
@@ -271,14 +283,14 @@
                 <h4 class="plan-card__name">個人事業主</h4>
                 <p class="plan-card__badge">（10時間／月まで）</p>
                 <p class="plan-card__label">月額</p>
-                <p class="plan-card__price">¥30,000〜</p>
+                <p class="plan-card__price">¥30,000~</p>
                 <p class="plan-card__note">日常の経理業務補助・複式簿記による記帳・請求書対応等</p>
               </article>
             </li>
             <!-- ループ終了 -->
 
             <li class="plan__item">
-              <article class="plan-card plan-card--large" aria-label="法人様向け">
+              <article class="plan-card plan-card--large">
                 <div class="plan-card__icon-group">
                   <div class="plan-card__icon" aria-hidden="true">
                     <img src="./assets/images/common/plan-icon05.svg" alt="" width="39" height="49">
@@ -287,13 +299,13 @@
                 <h4 class="plan-card__name">法人様向け</h4>
                 <p class="plan-card__badge">（20時間／月まで）</p>
                 <p class="plan-card__label">月額</p>
-                <p class="plan-card__price">¥100,000〜</p>
+                <p class="plan-card__price">¥100,000~</p>
                 <p class="plan-card__note">日常の経理業務補助・複式簿記による記帳・請求書対応・給与明細書作成・税理士対応等</p>
               </article>
             </li>
 
             <li class="plan__item">
-              <article class="plan-card plan-card--large" aria-label="個人事業主確定申告前期補助">
+              <article class="plan-card plan-card--large">
                 <div class="plan-card__icon-group">
                   <div class="plan-card__icon" aria-hidden="true">
                     <img src="./assets/images/common/plan-icon06.svg" alt="" width="34" height="43">
@@ -302,13 +314,13 @@
                 <h4 class="plan-card__name">個人事業主確定申告前期補助</h4>
                 <p class="plan-card__badge">（単発）</p>
                 <p class="plan-card__label">月額</p>
-                <p class="plan-card__price">¥60,000〜</p>
-                <p class="plan-card__note">確定申告に向けて、前期（1月〜6月分）の帳簿整理や経費処理を早めに進めることで、申告作業の負担を軽減するためのサポート制度です。</p>
+                <p class="plan-card__price">¥60,000~</p>
+                <p class="plan-card__note">確定申告に向けて、前期（1月〜6月分）の帳簿整理や経費処理を早めに進めることで、</p>
               </article>
             </li>
 
             <li class="plan__item">
-              <article class="plan-card plan-card--large" aria-label="オプション">
+              <article class="plan-card plan-card--large">
                 <div class="plan-card__icon-group">
                   <div class="plan-card__icon" aria-hidden="true">
                     <img src="./assets/images/common/plan-icon07.svg" alt="" width="62" height="45">
@@ -317,7 +329,7 @@
                 <h4 class="plan-card__name">オプション</h4>
                 <p class="plan-card__badge">（チラシ／名刺／SNS運用／マンガ）</p>
                 <p class="plan-card__label">月額</p>
-                <p class="plan-card__price">¥5,000〜</p>
+                <p class="plan-card__price">¥5,000~</p>
                 <p class="plan-card__note">ご予算に合わせたプランでのご依頼も可能でございます。お気軽にお問い合わせくださいませ。</p>
               </article>
             </li>
@@ -357,7 +369,7 @@
     </section>
 
     <!-- マンガ2 -->
-    <section class="manga" aria-label="サービスを受けることによって期待されるビジョン">
+    <section class="manga manga--second" aria-label="サービスを受けることによって期待されるビジョン">
       <div class="manga__inner inner">
         <!-- <div class="heading-wrap heading-wrap--center">
           <h2 class="heading heading__title">マンガでわかる事業内容</h2>
@@ -420,7 +432,7 @@
     </section>
 
     <section id="faq" class="faq">
-      <div class="faq__inner inner">
+      <div class="faq__inner">
         <div class="heading-wrap heading-wrap--center">
           <h2 class="faq__title heading heading__title">よくある質問</h2>
         </div>
@@ -434,7 +446,7 @@
             </dt>
             <dd class="faq-list__answer">
               <span class="faq-list__badge faq-list__badge--answer">A</span>
-              お問い合わせいただいた際に、こちらからヒアリングシートをお送りします。そちらにご回答いただけますとスムーズに進行することができますので、ご対応をお願いいたします。
+              お問い合わせいただいた際に、こちらからヒアリングシートをお送りします。こちらに回答いただけますとスムーズに進行することができますので、ご対応をお願いいたします。
             </dd>
           </dl>
           <!-- ループ終了 -->
@@ -451,7 +463,7 @@
               お見積もりにご納得いただき、正式にご契約を交わすまでは費用はかかりませんので、ご安心ください。
             </dd>
           </dl>
-          <dl class="faq__list faq-list">
+          <dl class="faq__list faq-list faq-list--second">
             <dt class="faq-list__question">
               <span class="faq-list__badge">Q</span>
               Webサイト制作にはどのくらい期間がかかりますか？
@@ -462,7 +474,7 @@
               プロジェクトの規模や要件によりますが、通常は数週間から数ヶ月かかります。
             </dd>
           </dl>
-          <dl class="faq__list faq-list">
+          <dl class="faq__list faq-list faq-list--second">
             <dt class="faq-list__question">
               <span class="faq-list__badge">Q</span>
               Webやバックオフィス業務のことが何もわからないのですが大丈夫でしょうか？
@@ -496,8 +508,8 @@
         </div>
 
         <p class="contact__text">
-          お見積り、ご相談をご希望の方は、<br>
-          下のLINEからお問い合わせください。
+          お見積り、ご相談ご希望の方は<br>
+          下のLINEよりお問い合わせください。
         </p>
 
         <figure class="contact__qr">
