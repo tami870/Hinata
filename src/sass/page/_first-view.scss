@@ -6,7 +6,7 @@
   background-color: $background-white;
 
   @include mq(md) {
-    height: clamp(rem(300), 122.67vw, rem(670));
+    height: clamp(rem(300), 133.333vw, rem(670));
     padding-top: rem(45);
     padding-bottom: rem(26);
   }
@@ -126,6 +126,8 @@
   @include mq(md) {
     inline-size: clamp(rem(100), 30.67vw, rem(163));
     transform: translate(0, -195%);
+    inset-block-start: -2%;
+    inset-inline-end: 1.2%;
   }
 }
 

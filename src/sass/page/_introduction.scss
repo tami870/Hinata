@@ -7,6 +7,11 @@
   position: relative;
   z-index: 0;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+
+  @include mq(md) {
+    padding-top: rem(30);
+    padding-bottom: rem(30);
+  }
 }
 
 .introduction__inner {
@@ -16,9 +21,10 @@
   width: 100%;
   margin-right: auto;
   margin-left: auto;
+
   @include mq("md") {
-    padding-right: $padding-sp;
-    padding-left: $padding-sp;
+    padding-right: rem(20);
+    padding-left: rem(19);
   }
 }
 
@@ -36,6 +42,10 @@
   align-items: center;
   padding-top: rem(92);
   padding-bottom: rem(89);
+
+  @include mq(md) {
+    padding: 0;
+  }
 }
 
 .introduction__image {
@@ -66,6 +76,7 @@
     margin-left: 0;
     margin-top: rem(35);
     text-align: center;
+    padding: 0;
   }
 }
 
@@ -76,18 +87,20 @@
   color: $black;
 
   @include mq(md) {
-    font-size: clamp(rem(14), 4.27vw, rem(18));
+    font-size: clamp(rem(14), 4.26667vw, rem(18));
+    line-height: 2.0625;
   }
 }
 
 .introduction__text {
   margin-top: rem(18);
   font-size: clamp(rem(14), 1.8vw, rem(16));
-  line-height: 2;
+  line-height: 2.5;
   font-weight: $max-bold;
 
   @include mq(md) {
     font-size: clamp(rem(10), 3.2vw, rem(14));
+    margin-top: rem(11);
   }
 }
 

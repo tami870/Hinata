@@ -6,12 +6,16 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: rem(105);
+  min-height: rem(105);
+  padding-top: rem(10);
+  padding-bottom: rem(12);
   background-color: $white;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.22);
 
   @include mq(md) {
-    height: rem(80);
+    min-height: rem(80);
+    padding-top: rem(21);
+    padding-left: rem(14);
   }
 }
 
@@ -44,8 +48,8 @@
   aspect-ratio: 160 / 83;
 
   @include mq(md) {
-    max-width: rem(86);
-    padding-left: rem(6);
+    width: rem(86);
+    aspect-ratio: 86 / 45;
   }
 }
 

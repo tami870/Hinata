@@ -9,9 +9,9 @@
   border-radius: rem(20);
 
   @include mq(md) {
-    padding-top: rem(37);
+    padding-top: rem(30);
     padding-right: rem(20);
-    padding-bottom: rem(30);
+    padding-bottom: rem(22);
     padding-left: rem(20);
   }
 }
@@ -36,6 +36,7 @@
 
   @include mq(md) {
     column-gap: rem(34);
+    align-items: start;
   }
 }
 

@@ -3,25 +3,25 @@
 .page-top-button {
   position: fixed;
   z-index: 9000;
-  right: rem(40);
-  bottom: rem(120);
-  width: rem(60);
-  height: rem(60);
+  right: 3%;
+  bottom: 4%;
+  width: rem(75);
+  height: rem(75);
   cursor: pointer;
   background-color: $background-green;
   border: 2px solid $white;
   border-radius: 50%;
   color: $white;
-  font-size: rem(24);
+  font-size: rem(28);
   display: flex;
   align-items: center;
   justify-content: center;
 
   @include mq(md) {
-    right: rem(15);
-    bottom: rem(75);
-    width: rem(28);
-    height: rem(28);
-    font-size: rem(13);
+    right: 4%;
+    bottom: 12%;
+    width: rem(36);
+    height: rem(36);
+    font-size: rem(18);
   }
 }

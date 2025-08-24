@@ -21,7 +21,10 @@
   @include mq(md) {
     width: rem(345);
     font-size: rem(16);
-    padding: rem(9.5);
+    padding-top: rem(9.5);
+    padding-right: rem(9.5);
+    padding-bottom: rem(9.5);
+    padding-left: 0;
   }
 }
 

@@ -18,7 +18,8 @@
   width: 100%;
   margin-right: auto;
   margin-left: auto;
-  @include mq("md") {
+
+  @include mq(md) {
     padding-right: $padding-sp;
     padding-left: $padding-sp;
   }
@@ -54,13 +55,12 @@
   gap: clamp(rem(30), 3.04vw, rem(55));
 
   @include mq(md) {
-    margin-top: rem(40);
-    flex-direction: column;
+    margin-top: rem(38);
+    margin-right: auto;
+    margin-left: auto;
     grid-template-columns: 1fr;
     justify-content: center;
     max-width: rem(400);
-    margin-left: auto;
-    margin-right: auto;
   }
 }
 
@@ -82,9 +82,14 @@
   }
 }
 
+// カードの高さを揃える
 .plan__item {
   height: 100%;
   display: flex;
+}
+
+.plan__item:not(:first-of-type) {
+  margin-top: rem(-6);
 }
 
 .plan__cta {
@@ -174,8 +179,8 @@
   // aspect-ratio: 540 / 810;
 
   @include mq(md) {
-    right: 20%;
-    bottom: 2.5%;
+    right: 17.7%;
+    bottom: 8.3%;
   }
 
   @include mq(lg) {
@@ -199,8 +204,9 @@
   // aspect-ratio: 561 / 842;
 
   @include mq(md) {
-    bottom: 1.25%;
-    right: 0%;
+    bottom: 8.4%;
+    right: -3.3%;
+    // right: -7.7%;
   }
 
   @include mq(lg) {

@@ -5,17 +5,21 @@
   padding-right: rem(35);
   padding-bottom: rem(20);
   padding-left: rem(35);
-  width: clamp(rem(235), 27.5695vw, rem(400));
+  width: 100%;
+  // width: clamp(rem(235), 27.5695vw, rem(400));
   height: auto;
   background-color: $white;
   border-radius: rem(20);
   box-shadow: 4px 2px 17px rgba(0, 0, 0, 0.25);
   text-align: center;
+  display: flex;
+  flex-direction: column;
 
   @include mq(md) {
-    padding-top: clamp(rem(20), 5.87vw, rem(48));
-    padding-bottom: clamp(rem(20), 5.87vw, rem(48));
+    padding-top: rem(20);
+    padding-bottom: rem(25);
     width: clamp(rem(200), 92vw, rem(400));
+    min-height: clamp(rem(260), 72.5334vw, rem(300));
   }
 }
 
@@ -31,6 +35,7 @@
   @include mq(md) {
     padding: rem(20);
     width: clamp(rem(200), 92vw, rem(400));
+    min-height: clamp(rem(320), 89.3334vw, rem(420));
   }
 }
 
@@ -85,6 +90,7 @@
   @include mq(md) {
     margin-top: rem(8);
     font-size: rem(16);
+    line-height: 1.5;
   }
 }
 
@@ -98,7 +104,7 @@
   line-height: 1;
 
   @include mq(md) {
-    margin-top: rem(5);
+    margin-top: rem(7);
     font-size: rem(36);
   }
 }
@@ -111,6 +117,11 @@
 .plan-card__note-group > :not(:first-child) {
   margin-top: rem(8);
   padding-top: rem(4);
+
+  @include mq(md) {
+    margin: 0;
+    padding: 0;
+  }
 }
 
 .plan-card__note {
@@ -122,8 +133,8 @@
   color: $black2;
 
   @include mq(md) {
-    margin-top: rem(25);
     font-size: rem(14);
+    padding: 0;
   }
 }
 
@@ -134,7 +145,7 @@
 
   @include mq(md) {
     font-size: rem(16);
-    margin-top: rem(8);
+    margin-top: rem(6);
   }
 }
 
@@ -146,7 +157,7 @@
   line-height: 1.5;
 
   @include mq(md) {
-    margin-top: rem(5);
+    margin-top: rem(-1);
     font-size: rem(14);
   }
 }
@@ -159,8 +170,8 @@
   color: $red;
 
   @include mq(md) {
-    margin-top: rem(20);
-    font-size: rem(14);
+    margin-top: rem(14);
+    font-size: rem(16);
   }
 }
 
@@ -174,11 +185,14 @@
 
 .plan-card--large .plan-card__note {
   margin-top: rem(38);
+  font-family: $third-font-family;
   text-align: left;
   padding-left: rem(12);
   padding-right: rem(60);
 
   @include mq(md) {
-    margin-top: rem(25);
+    margin-top: rem(30);
+    font-size: rem(16);
+    padding: 0;
   }
 }
