@@ -40,9 +40,14 @@
 <body>
   <header class="header js-header">
     <div class="header__inner">
-      <h1 class="header__title"><img class="header__logo" src="./assets/images/common/header-logo.svg" alt="hinata"
-          width="160" height="83" decoding="async" loading="eager" fetchpriority="high">
+      <h1 class="header__title">
+        <picture>
+          <source media="(max-width: 767px)" srcset="./assets/images/common/header-logo_sp.jpg">
+          <img class="header__logo" src="./assets/images/common/header-logo_pc.svg" alt="hinata" width="160" height="83"
+            decoding="async" loading="eager" fetchpriority="high">
+        </picture>
       </h1>
+
       <nav class="header__nav u-desktop">
         <ul class="header__items">
           <li class="header__item">
@@ -67,7 +72,7 @@
 
     <!-- ドロワー -->
     <div class="drawer-menu js-drawer">
-      <div class="drawer-menu__bg"></div> <!-- ぼかし背景用 -->
+      <div class="drawer-menu__background"></div>
       <div class="drawer-menu__inner">
         <ul class="drawer-menu__items">
           <li class="drawer-menu__item">
@@ -281,7 +286,7 @@
                   </div>
                 </div>
                 <h4 class="plan-card__name">個人事業主</h4>
-                <p class="plan-card__badge">（10時間／月まで）</p>
+                <p class="plan-card__badge">（10時間/月まで）</p>
                 <p class="plan-card__label">月額</p>
                 <p class="plan-card__price">¥30,000~</p>
                 <p class="plan-card__note">日常の経理業務補助・複式簿記による記帳・請求書対応等</p>
@@ -297,7 +302,7 @@
                   </div>
                 </div>
                 <h4 class="plan-card__name">法人様向け</h4>
-                <p class="plan-card__badge">（20時間／月まで）</p>
+                <p class="plan-card__badge">（20時間/月まで）</p>
                 <p class="plan-card__label">月額</p>
                 <p class="plan-card__price">¥100,000~</p>
                 <p class="plan-card__note">日常の経理業務補助・複式簿記による記帳・請求書対応・給与明細書作成・税理士対応等</p>
@@ -315,7 +320,7 @@
                 <p class="plan-card__badge">（単発）</p>
                 <p class="plan-card__label">月額</p>
                 <p class="plan-card__price">¥60,000~</p>
-                <p class="plan-card__note">確定申告に向けて、前期（1月〜6月分）の帳簿整理や経費処理を早めに進めることで、</p>
+                <p class="plan-card__note">確定申告に向けて、前期（1月〜6月分）の帳簿整理や経費処理を早めに進めることで、申告作業の負担を軽減するためのサポート制度です。</p>
               </article>
             </li>
 
