@@ -41,11 +41,13 @@
   <header class="header js-header">
     <div class="header__inner">
       <h1 class="header__title">
-        <picture>
-          <source media="(max-width: 767px)" srcset="./assets/images/common/header-logo_sp.jpg">
-          <img class="header__logo" src="./assets/images/common/header-logo_pc.svg" alt="hinata" width="160" height="83"
-            decoding="async" loading="eager" fetchpriority="high">
-        </picture>
+        <a href="/" class="header__link" aria-label="トップページに戻る">
+          <picture>
+            <source media="(max-width: 767px)" srcset="./assets/images/common/header-logo_sp.svg">
+            <img class="header__logo" src="./assets/images/common/header-logo_pc.svg" alt="hinata" width="160"
+              height="83" decoding="async" loading="eager" fetchpriority="high">
+          </picture>
+        </a>
       </h1>
 
       <nav class="header__nav u-desktop">
@@ -96,7 +98,7 @@
           <div class="first-view__catchphrase">
             <h2 class="first-view__catchphrase-text">
               <span class="first-view__catchphrase-part">
-                Webと<br>バックオフィスの<br>"困った"を
+                Webと<br>バックオフィスの<br>“困った”を
               </span>
               <span class="first-view__catchphrase-part first-view__catchphrase-part--strong">
                 ママチームが<br>まるっとサポート
@@ -117,7 +119,7 @@
     </section>
 
     <section class="introduction">
-      <div class="introduction__inner">
+      <div class="introduction__inner inner">
         <div class="introduction__content">
           <div class="introduction__images">
             <img src="./assets/images/common/introduction01.webp" alt="そろばんを手に、不安そうな表情を浮かべる男性のイラスト。"
@@ -140,63 +142,19 @@
     <!-- マンガ1 -->
     <section class="manga" aria-label="事業内容を紹介するマンガ">
       <div class="manga__inner inner">
-        <!-- <div class="heading-wrap heading-wrap--center">
-          <h2 class="heading heading__title">マンガでわかる事業内容</h2>
-        </div> -->
-
-        <ol class="manga__list">
-          <li class="manga__item">
-            <!-- <figure class="manga__figure">
-              <picture>
-                <source type="image/webp" srcset="images/manga-01.webp" />
-                <img class="manga__image"
-                     src="images/manga-01.png"
-                     alt="1コマ目：相談内容のヒアリングを行う場面"
-                     loading="lazy" width="640" height="640">
-              </picture> -->
-            <!-- <figcaption class="manga__caption">ヒアリング</figcaption>
-            </figure> -->
-          </li>
-
-          <li class="manga__item">
-            <!-- <figure class="manga__figure">
-              <picture>
-                <source type="image/webp" srcset="images/manga-02.webp" />
-                <img class="manga__image"
-                     src="images/manga-02.png"
-                     alt="2コマ目：課題の整理とご提案"
-                     loading="lazy" width="640" height="640">
-              </picture>
-              <figcaption class="manga__caption">課題整理</figcaption>
-            </figure> -->
-          </li>
-
-          <li class="manga__item">
-            <!-- <figure class="manga__figure">
-              <picture>
-                <source type="image/webp" srcset="images/manga-03.webp" />
-                <img class="manga__image"
-                     src="images/manga-03.png"
-                     alt="3コマ目：実装と運用の開始"
-                     loading="lazy" width="640" height="640">
-              </picture>
-              <figcaption class="manga__caption">実装・運用</figcaption>
-            </figure> -->
-          </li>
-
-          <li class="manga__item">
-            <!-- <figure class="manga__figure">
-              <picture>
-                <source type="image/webp" srcset="images/manga-04.webp" />
-                <img class="manga__image"
-                     src="images/manga-04.png"
-                     alt="4コマ目：効果検証と改善"
-                     loading="lazy" width="640" height="640">
-              </picture>
-              <figcaption class="manga__caption">改善</figcaption>
-            </figure> -->
-          </li>
-        </ol>
+        <div class="manga__item">
+          <img src="./assets/images/common/manga01.jpg"
+            alt="アクセサリー作家が店舗経営やホームページ制作、SNS運用や販促活動に追われ制作に集中できず悩む。解決策を提示するママ集団の登場で希望を見出す場面。" class="manga__image">
+        </div>
+        <div class="manga__item">
+          <img src="./assets/images/common/manga02.jpg"
+            alt="アクセサリー作家を支援するママ集団が登場し、ホームページ制作やSNS運用、チラシ制作、経理まで担当。店舗経営や販促をサポートして集客と売上アップを実現する展開。" class="manga__image">
+        </div>
+        <div class="manga__item">
+          <img src="./assets/images/common/manga03.jpg"
+            alt="アクセサリー作家の経営や集客の悩みが解決し、ホームページ制作やSNS運用、販促支援を担ったママ集団に感謝を伝える。涙ながらに「ありがとう」と表現する感動的なラストシーン。"
+            class="manga__image">
+        </div>
       </div>
     </section>
 
@@ -218,7 +176,7 @@
                   </div>
                 </div>
                 <h4 class="plan-card__name">シンプルプラン</h4>
-                <p class="plan-card__price">¥80,000~</p>
+                <p class="plan-card__price">&yen;80,000~</p>
                 <div class="plan-card__note-group">
                   <p class="plan-card__note">テンプレ固定(4P)</p>
                 </div>
@@ -237,10 +195,8 @@
                   </div>
                 </div>
                 <h4 class="plan-card__name">＋印刷物プラン</h4>
-                <p class="plan-card__price">¥100,000~</p>
-                <!-- <p class="plan-card__note">テンプレ固定(4P)<br>名刺(100枚)+チラシ(300枚)</p> -->
+                <p class="plan-card__price">&yen;100,000~</p>
                 <div class="plan-card__note-group">
-
                   <p class="plan-card__note">テンプレ固定(4P)</p>
                   <p class="plan-card__note">名刺(100枚)&ensp;+チラシ(300枚)</p>
                 </div>
@@ -262,9 +218,8 @@
                   </div>
                 </div>
                 <h4 class="plan-card__name">＋印刷物プラン＋SNSプラン</h4>
-                <p class="plan-card__price">¥150,000~</p>
+                <p class="plan-card__price">&yen;150,000~</p>
                 <div class="plan-card__note-group">
-
                   <p class="plan-card__note">テンプレ固定(4P)</p>
                   <p class="plan-card__note">名刺(100枚)+チラシ(300枚)</p>
                   <p class="plan-card__note">SNS(Instagram)</p>
@@ -288,7 +243,7 @@
                 <h4 class="plan-card__name">個人事業主</h4>
                 <p class="plan-card__badge">（10時間/月まで）</p>
                 <p class="plan-card__label">月額</p>
-                <p class="plan-card__price">¥30,000~</p>
+                <p class="plan-card__price">&yen;30,000~</p>
                 <p class="plan-card__note">日常の経理業務補助・複式簿記による記帳・請求書対応等</p>
               </article>
             </li>
@@ -304,7 +259,7 @@
                 <h4 class="plan-card__name">法人様向け</h4>
                 <p class="plan-card__badge">（20時間/月まで）</p>
                 <p class="plan-card__label">月額</p>
-                <p class="plan-card__price">¥100,000~</p>
+                <p class="plan-card__price">&yen;100,000~</p>
                 <p class="plan-card__note">日常の経理業務補助・複式簿記による記帳・請求書対応・給与明細書作成・税理士対応等</p>
               </article>
             </li>
@@ -319,7 +274,7 @@
                 <h4 class="plan-card__name">個人事業主確定申告前期補助</h4>
                 <p class="plan-card__badge">（単発）</p>
                 <p class="plan-card__label">月額</p>
-                <p class="plan-card__price">¥60,000~</p>
+                <p class="plan-card__price">&yen;60,000~</p>
                 <p class="plan-card__note">確定申告に向けて、前期（1月〜6月分）の帳簿整理や経費処理を早めに進めることで、申告作業の負担を軽減するためのサポート制度です。</p>
               </article>
             </li>
@@ -334,7 +289,7 @@
                 <h4 class="plan-card__name">オプション</h4>
                 <p class="plan-card__badge">（チラシ／名刺／SNS運用／マンガ）</p>
                 <p class="plan-card__label">月額</p>
-                <p class="plan-card__price">¥5,000~</p>
+                <p class="plan-card__price">&yen;5,000~</p>
                 <p class="plan-card__note">ご予算に合わせたプランでのご依頼も可能でございます。お気軽にお問い合わせくださいませ。</p>
               </article>
             </li>
@@ -370,69 +325,6 @@
           </div>
         </div>
 
-      </div>
-    </section>
-
-    <!-- マンガ2 -->
-    <section class="manga manga--second" aria-label="サービスを受けることによって期待されるビジョン">
-      <div class="manga__inner inner">
-        <!-- <div class="heading-wrap heading-wrap--center">
-          <h2 class="heading heading__title">マンガでわかる事業内容</h2>
-        </div> -->
-
-        <ol class="manga__list">
-          <li class="manga__item">
-            <!-- <figure class="manga__figure">
-                  <picture>
-                    <source type="image/webp" srcset="images/manga-01.webp" />
-                    <img class="manga__image"
-                         src="images/manga-01.png"
-                         alt="1コマ目：相談内容のヒアリングを行う場面"
-                         loading="lazy" width="640" height="640">
-                  </picture> -->
-            <!-- <figcaption class="manga__caption">ヒアリング</figcaption>
-                </figure> -->
-          </li>
-
-          <li class="manga__item">
-            <!-- <figure class="manga__figure">
-                  <picture>
-                    <source type="image/webp" srcset="images/manga-02.webp" />
-                    <img class="manga__image"
-                         src="images/manga-02.png"
-                         alt="2コマ目：課題の整理とご提案"
-                         loading="lazy" width="640" height="640">
-                  </picture>
-                  <figcaption class="manga__caption">課題整理</figcaption>
-                </figure> -->
-          </li>
-
-          <li class="manga__item">
-            <!-- <figure class="manga__figure">
-                  <picture>
-                    <source type="image/webp" srcset="images/manga-03.webp" />
-                    <img class="manga__image"
-                         src="images/manga-03.png"
-                         alt="3コマ目：実装と運用の開始"
-                         loading="lazy" width="640" height="640">
-                  </picture>
-                  <figcaption class="manga__caption">実装・運用</figcaption>
-                </figure> -->
-          </li>
-
-          <li class="manga__item">
-            <!-- <figure class="manga__figure">
-                  <picture>
-                    <source type="image/webp" srcset="images/manga-04.webp" />
-                    <img class="manga__image"
-                         src="images/manga-04.png"
-                         alt="4コマ目：効果検証と改善"
-                         loading="lazy" width="640" height="640">
-                  </picture>
-                  <figcaption class="manga__caption">改善</figcaption>
-                </figure> -->
-          </li>
-        </ol>
       </div>
     </section>
 
