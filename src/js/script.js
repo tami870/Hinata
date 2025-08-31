@@ -159,4 +159,30 @@ jQuery(function ($) {
         gsap.set(".plan__cta-action .button", { clearProps: "transform" }),
     }
   );
+
+  gsap.utils.toArray(".faq__list").forEach((item, i) => {
+    const q = item.querySelector(".faq-list__question");
+    const a = item.querySelector(".faq-list__answer");
+
+    // アイテムごとに発火（自然に追従）
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: item,
+        start: "top 85%",
+        once: true,
+      },
+    });
+
+    // Qを先に、Aを少し遅れて
+    tl.fromTo(
+      q,
+      { opacity: 0, y: 18 },
+      { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" }
+    ).fromTo(
+      a,
+      { opacity: 0, y: 18 },
+      { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" },
+      "-=0.20"
+    );
+  });
 });
