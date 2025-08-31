@@ -1,0 +1,34 @@
+@use "global" as *;
+
+.manga {
+  background-color: $background-gray;
+  padding-top: rem(80);
+  padding-bottom: rem(80);
+
+  @include mq(md) {
+    padding-top: rem(40);
+    padding-bottom: rem(40);
+  }
+}
+
+.manga__inner {
+  display: flex;
+  flex-direction: column;
+  gap: rem(40);
+
+  @include mq(md) {
+    gap: rem(20);
+  }
+}
+
+.manga__item {
+  width: 100%;
+}
+
+.manga__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: rem(10);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}

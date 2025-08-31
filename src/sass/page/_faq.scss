@@ -1,13 +1,13 @@
 @use "global" as *;
 
 .faq {
-  padding-top: rem(97);
+  padding-top: rem(100);
   padding-bottom: rem(100);
   background-color: $background-white;
 
   @include mq(md) {
-    padding-top: rem(80);
-    padding-bottom: rem(94);
+    padding-top: rem(40);
+    padding-bottom: rem(40);
   }
 }
 

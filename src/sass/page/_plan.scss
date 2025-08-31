@@ -6,7 +6,7 @@
   background-color: $background-white;
 
   @include mq(md) {
-    padding-top: rem(80);
+    padding-top: rem(40);
     padding-bottom: rem(40);
   }
 }
@@ -221,7 +221,7 @@
   }
 }
 
-.plan-cta__bubble {
+.plan__cta-bubble {
   background-color: $background-green;
   color: $black2;
   border-radius: 50%;
@@ -254,7 +254,7 @@
   }
 }
 
-.plan-cta__bubble::after {
+.plan__cta-bubble::after {
   content: "";
   position: absolute;
   bottom: 16.6%;
@@ -272,7 +272,7 @@
   }
 }
 
-.plan-cta__action {
+.plan__cta-action {
   text-align: center;
   z-index: 100;
 }

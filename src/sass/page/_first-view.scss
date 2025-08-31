@@ -14,7 +14,7 @@
 
 .first-view__inner {
   max-width: $inner + strip-unit($padding-pc) * 2;
-  padding-right: 40px;
+  padding-right: rem(40);
   padding-left: rem(12);
   width: 100%;
   margin-right: auto;

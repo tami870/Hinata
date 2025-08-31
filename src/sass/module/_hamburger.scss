@@ -22,7 +22,7 @@
   width: 100%;
   height: rem(1);
   background-color: $black;
-  transition: 0.3s transform, 0.3 background-color;
+  transition: 0.3s transform, 0.3s background-color;
 }
 
 .hamburger.is-active span {

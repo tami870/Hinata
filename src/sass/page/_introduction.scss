@@ -2,8 +2,8 @@
 
 .introduction {
   background-color: $background-green;
-  // padding-top: rem(86);
-  // padding-bottom: rem(88);
+  padding-top: rem(90);
+  padding-bottom: rem(90);
   position: relative;
   z-index: 0;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
@@ -15,17 +15,6 @@
 }
 
 .introduction__inner {
-  max-width: $inner + strip-unit($padding-pc) * 2;
-  padding-right: $padding-pc;
-  padding-left: rem(15);
-  width: 100%;
-  margin-right: auto;
-  margin-left: auto;
-
-  @include mq("md") {
-    padding-right: rem(20);
-    padding-left: rem(19);
-  }
 }
 
 .introduction__content {
@@ -40,12 +29,6 @@
 .introduction__images {
   display: flex;
   align-items: center;
-  padding-top: rem(92);
-  padding-bottom: rem(89);
-
-  @include mq(md) {
-    padding: 0;
-  }
 }
 
 .introduction__image {
@@ -69,14 +52,11 @@
 
 .introduction__text-area {
   margin-left: clamp(rem(28), 7.0139vw, rem(105));
-  padding-top: rem(80);
-  padding-bottom: rem(89);
 
   @include mq(md) {
     margin-left: 0;
     margin-top: rem(35);
     text-align: center;
-    padding: 0;
   }
 }
 

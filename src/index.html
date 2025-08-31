@@ -6,24 +6,40 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <meta name="format-detection" content="telephone=no" />
   <meta name="robots" content="noindex" /> <!-- 本番では index,follow に切り替え -->
+
   <!-- meta情報 -->
-  <title>Hinata</title>
-  <meta name="description" content="説明文を入れる" />
-  <!-- ogp -->
-  <meta property="og:title" content="タイトルを入れる" />
-  <meta property="og:type" content="Website" />
-  <meta property="og:url" content="https://example.com" />
-  <meta property="og:image" content="https://example.com/ogp.jpg" />
-  <meta property="og:site_name" content="タイトルを入れる" />
-  <meta property="og:description" content="説明文を入れる" />
-  <meta property="og:locale" content="ja_JP">
+  <title>Hinata｜仕事と家庭を軽やかに。ママ専門家のWebバックオフィスサポート</title>
+  <meta name="description"
+    content="Hinataは、“ママだから分かる”専門家が支えるWebバックオフィスサービス。事務作業の代行からITツールの整備、単発業務の対応まで、家庭と両立しながら“働く”をもっと軽やかに。ママによるママのための共感サポートで、あなたの時間と心にゆとりを。" />
+
+  <!-- Open Graph Protocol -->
+  <meta property="og:title" content="Hinata｜仕事と家庭を軽やかに。ママ専門家のWebバックオフィスサポート" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://example.com" /> <!-- 本番ドメインに要変更 -->
+  <meta property="og:image" content="https://example.com/ogp.jpg" /> <!-- 本番ドメインに要変更 -->
+  <meta property="og:site_name" content="Hinata" />
+  <meta property="og:description"
+    content="Hinataは、ママ専門家によるWebバックオフィス支援サービス。HP制作、チラシ・名刺作成、経理、SNS運用、LPマンガ制作まで幅広くサポートし、“分かってくれる人”に安心して任せられます。" />
+  <meta property="og:locale" content="ja_JP" />
+
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@your_twitter_id">
+  <meta name="twitter:title" content="Hinata｜仕事と家庭を軽やかに。ママ専門家のWebバックオフィスサポート">
+  <meta name="twitter:description"
+    content="Hinataは、ママ専門家によるWebバックオフィス支援サービス。HP制作、チラシ・名刺作成、経理、SNS運用、LPマンガ制作まで幅広くサポートし、“分かってくれる人”に安心して任せられます。" />
+  <meta name="twitter:image" content="https://example.com/ogp.jpg" /> <!-- 本番ドメインに要変更 -->
+
   <!-- canonical -->
   <link rel="canonical" href="https://example.com/">
+
   <!-- Favicon / App Icons -->
-  <link rel="icon" href="">
-  <link rel="apple-touch-icon" href="" sizes="180x180">
+  <link rel="icon" type="image/png" href="./assets/images/common/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="./assets/images/common/favicon.svg" />
+  <link rel="shortcut icon" href="./assets/images/common/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/common/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Hinata" />
+  <link rel="manifest" href="/site.webmanifest" />
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -123,9 +139,9 @@
         <div class="introduction__content">
           <div class="introduction__images">
             <img src="./assets/images/common/introduction01.webp" alt="そろばんを手に、不安そうな表情を浮かべる男性のイラスト。"
-              class="introduction__image" aria-hidden="true" width="242" height="242">
+              class="introduction__image" width="242" height="242">
             <img src="./assets/images/common/introduction02.webp" alt="請求書らしき紙を見て困惑した様子の女性のイラスト。"
-              class="introduction__image" aria-hidden="true" width="242" height="242">
+              class="introduction__image" width="242" height="242">
           </div>
           <div class="introduction__text-area">
             <h2 class="introduction__title">ちょっとした「これお願いできる？」も大歓迎<br>
@@ -166,12 +182,12 @@
 
         <div class="plan__group">
           <h3 class="plan__group-label group-label">WEB</h3>
-          <ul class="plan__items" role="list">
+          <ul class="plan__items">
             <!-- ループ開始 -->
             <li class="plan__item">
               <article class="plan-card">
                 <div class="plan-card__icon-group">
-                  <div class="plan-card__icon" aria-hidden="true">
+                  <div class="plan-card__icon">
                     <img src="./assets/images/common/plan-icon01.svg" alt="" width="41" height="41">
                   </div>
                 </div>
@@ -191,7 +207,7 @@
                     <img src="./assets/images/common/plan-icon01.svg" alt="" width="41" height="41">
                   </div>
                   <div class="plan-card__icon" aria-hidden="true">
-                    <img src="./assets/images/common/plan-icon02.svg" alt="" width="40.56" height="33">
+                    <img src="./assets/images/common/plan-icon02.svg" alt="" width="41" height="33">
                   </div>
                 </div>
                 <h4 class="plan-card__name">＋印刷物プラン</h4>
@@ -231,7 +247,7 @@
 
         <div class="plan__group plan__group--spaced">
           <h3 class="plan__group-label group-label">バックオフィス</h3>
-          <ul class="plan__items plan__items--large" role="list">
+          <ul class="plan__items plan__items--large">
             <!-- ループ開始 -->
             <li class="plan__item">
               <article class="plan-card plan-card--large">
@@ -296,7 +312,7 @@
           </ul>
         </div>
 
-        <div class="plan__cta" aria-label="ご相談CallToAction">
+        <div class="plan__cta">
           <div class="plan__cta-group">
             <div class="plan__cta-visual">
               <div class="plan__cta-image plan__cta-image--main">
@@ -311,17 +327,15 @@
                   <img src="./assets/images/common/plan-illustration03.png" alt="女性と一緒にファイルを左手で抱えて歩いている女性の様子"
                     width="561" height="842">
                 </div>
-                <p class="plan-cta__bubble">
+                <p class="plan__cta-bubble">
                   お困りごとは<br>ママチームに<br>おまかせ！
                 </p>
               </div>
             </div>
 
-            <p class="plan-cta__action">
-              <a href="#" class="button">無料で相談する</a>
+            <p class="plan__cta-action">
+              <a href="#" class="button" aria-label="無料相談フォームへ">無料で相談する</a>
             </p>
-
-
           </div>
         </div>
 
@@ -333,7 +347,6 @@
         <div class="heading-wrap heading-wrap--center">
           <h2 class="faq__title heading heading__title">よくある質問</h2>
         </div>
-
         <div class="faq__lists">
           <!-- ループ開始 -->
           <dl class="faq__list faq-list">
@@ -347,12 +360,10 @@
             </dd>
           </dl>
           <!-- ループ終了 -->
-
           <dl class="faq__list faq-list">
             <dt class="faq-list__question">
               <span class="faq-list__badge">Q</span>
               何か事前に用意しておく必要はありますか？
-
             </dt>
             <dd class="faq-list__answer">
               <span class="faq-list__badge faq-list__badge--answer">A</span>
@@ -364,7 +375,6 @@
             <dt class="faq-list__question">
               <span class="faq-list__badge">Q</span>
               Webサイト制作にはどのくらい期間がかかりますか？
-
             </dt>
             <dd class="faq-list__answer">
               <span class="faq-list__badge faq-list__badge--answer">A</span>
@@ -381,12 +391,10 @@
               大丈夫です。まずは無料でのご相談でお困りごとの整理をいたしますので、お気軽にお問い合わせください。
             </dd>
           </dl>
-
           <dl class="faq__list faq-list">
             <dt class="faq-list__question">
               <span class="faq-list__badge">Q</span>
               サービスはパッケージ商品でしょうか？
-
             </dt>
             <dd class="faq-list__answer">
               <span class="faq-list__badge faq-list__badge--answer">A</span>
@@ -394,7 +402,6 @@
             </dd>
           </dl>
         </div>
-
       </div>
     </section>
 
@@ -403,18 +410,14 @@
         <div class="heading-wrap heading-wrap--center">
           <h2 id="contact-title" class="contact__title heading heading__title">お問合せ</h2>
         </div>
-
         <p class="contact__text">
           お見積り、ご相談ご希望の方は<br>
           下のLINEよりお問い合わせください。
         </p>
-
         <figure class="contact__qr">
           <img src="./assets/images/common/LINE.jpg" alt="LINE公式アカウントのQRコード（スマートフォンで読み取ってください）" width="125" height="125"
             loading="lazy" decoding="async" class="contact__qr-image">
-          <!-- <figcaption class="contact__qr-caption">LINEでお問い合わせ</figcaption> -->
         </figure>
-
         <!-- 代替導線：クリックで開けるリンク（PC・QR未対応ユーザー向け） -->
         <!-- <p class="contact__actions">
           <a href="https://lin.ee/xxxxxxxx" target="_blank" rel="noopener">
@@ -428,9 +431,8 @@
   <footer class="footer">
     <div class="footer__inner inner">
       <p class="footer__logo">
-        <!-- トップへ戻す導線にする場合 -->
-        <a href="#" class="footer__logo-link" aria-label="Hinataトップへ">
-          <img src="./assets/images/common/footer-logo.svg" alt="Hinata" width="83" height="64" decoding="async"
+        <a href="/" class="footer__logo-link">
+          <img src="./assets/images/common/footer-logo.svg" alt="Hinataトップへ" width="83" height="64" decoding="async"
             class="footer__logo-image">
         </a>
       </p>
@@ -443,7 +445,7 @@
   </footer>
 
   <!-- ページトップボタン -->
-  <div class="page-top-button js-page-top">↑</div>
+  <button class="page-top-button js-page-top" aria-label="ページの先頭へ戻る">↑</button>
 
 </body>
 
