@@ -46,8 +46,12 @@
   <link
     href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Noto+Serif:ital,wdth,wght@0,62.5..100,100..900;1,62.5..100,100..900&display=swap"
     rel="stylesheet">
-  <!-- css -->
+  <!-- CSS -->
   <link rel="stylesheet" href="./assets/css/style.css" />
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+
   <!-- JavaScript（jQuery 3.7.1 + 正SRI）-->
   <script defer src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script defer src="./assets/js/script.js"></script>
@@ -57,7 +61,7 @@
   <header class="header js-header">
     <div class="header__inner">
       <h1 class="header__title">
-        <a href="/" class="header__link" aria-label="トップページに戻る">
+        <a href="/" class="header__link" aria-label="トップページへ戻る">
           <picture>
             <source media="(max-width: 767px)" srcset="./assets/images/common/header-logo_sp.svg">
             <img class="header__logo" src="./assets/images/common/header-logo_pc.svg" alt="hinata" width="160"
@@ -66,6 +70,7 @@
         </a>
       </h1>
 
+      <!-- ナビゲーション -->
       <nav class="header__nav u-desktop">
         <ul class="header__items">
           <li class="header__item">
@@ -128,10 +133,8 @@
                 height="546" decoding="async" fetchpriority="high" loading="eager">
             </div>
           </div>
-
         </div>
       </div>
-
     </section>
 
     <section class="introduction">
@@ -155,7 +158,6 @@
       </div>
     </section>
 
-    <!-- マンガ1 -->
     <section class="manga" aria-label="事業内容を紹介するマンガ">
       <div class="manga__inner inner">
         <div class="manga__item">
@@ -418,12 +420,6 @@
           <img src="./assets/images/common/LINE.jpg" alt="LINE公式アカウントのQRコード（スマートフォンで読み取ってください）" width="125" height="125"
             loading="lazy" decoding="async" class="contact__qr-image">
         </figure>
-        <!-- 代替導線：クリックで開けるリンク（PC・QR未対応ユーザー向け） -->
-        <!-- <p class="contact__actions">
-          <a href="https://lin.ee/xxxxxxxx" target="_blank" rel="noopener">
-            LINEで友だち追加
-          </a>
-        </p> -->
       </div>
     </section>
   </main>

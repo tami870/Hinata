@@ -8,24 +8,49 @@
   font-weight: $max-bold;
   color: $white;
   letter-spacing: 0.1em;
-  box-shadow: 0 7.69px 11.53px 0 rgba(35, 19, 5, 0.23);
   background-color: $orange;
-  padding-top: rem(12);
-  padding-right: rem(12);
-  padding-bottom: rem(12);
-  padding-left: 0;
   border-radius: rem(10);
   position: relative;
   text-align: center;
+  padding: rem(12) rem(12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease,
+    background-color 0.25s ease;
+  box-shadow: 0 7px 12px rgba(35, 19, 5, 0.23);
 
   @include mq(md) {
     width: rem(345);
     font-size: rem(16);
-    padding-top: rem(9.5);
-    padding-right: rem(9.5);
-    padding-bottom: rem(9.5);
-    padding-left: 0;
+    padding: rem(9.5) rem(9.5);
   }
+}
+
+.button:hover,
+.button:focus {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(255, 133, 51, 0.5); // オレンジのオーラ風影
+}
+
+// 疑似要素で柔らかい光のオーラ
+.button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 133, 51, 0.35),
+    transparent 70%
+  );
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  z-index: -1;
+}
+
+.button:hover::before,
+.button:focus::before {
+  opacity: 1;
+  transform: scale(1.2);
 }
 
 .button:after {

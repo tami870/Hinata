@@ -1,13 +1,26 @@
 @use "global" as *;
 
+/* セクションリンクのクリック時のスクロール位置調整 */
+:root {
+  --header-height: rem(80);
+}
+[id] {
+  scroll-margin-top: var(--header-height);
+}
+html {
+  scroll-behavior: smooth;
+}
+
 .drawer-menu {
-  position: absolute;
+  position: fixed;
   z-index: 5000;
-  top: 0;
-  left: 0;
+  inset: 0;
   display: none;
   width: 100%;
-  height: 100vh;
+  /* ビューポート起伏対策：古→新の順に上書き */
+  height: 100vh; // フォールバック
+  height: 100svh; // 小さい動的VH（iOSの隠れバー対策）
+  height: 100dvh; // 最終的な動的VH
   overflow: hidden;
 
   /* 背景画像レイヤー */
