@@ -206,3 +206,31 @@ exports.default = series(
 
 // 本番用タスク
 exports.build = series(clean, cssSass, jsBabel, imgImagemin, htmlCopy);
+
+// --- CSSだけ掃除（安全） ---
+function cleanCss() {
+  return del([
+    "dist/assets/css/**/*",
+    "!dist/assets/css/.gitkeep", // ← 置いているなら残す
+  ]);
+}
+exports["clean:css"] = cleanCss;
+
+// --- dist全体を掃除（必要なら） ---
+function cleanAll() {
+  return del([
+    "dist/**",
+    "!dist", // dist自体は残す
+    "!dist/.gitkeep", // 置いているなら残す
+  ]);
+}
+exports.clean = cleanAll;
+
+// 既存のbuildが関数なら：
+// exports.build = series(cleanAll, build);
+
+// 既存のbuildが parallel(styles, scripts, ...) なら：
+// exports.build = series(cleanAll, parallel(styles, scripts /*, images ... */));
+
+// CSSだけの簡易ビルドが欲しければ：
+// exports.styles = series(cleanCss, styles);

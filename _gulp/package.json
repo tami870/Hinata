@@ -15,7 +15,6 @@
     "autoprefixer": "^10.4.14",
     "browser-sync": "^2.29.1",
     "css-declaration-sorter": "^6.4.0",
-    "del": "^6.1.1",
     "fs": "^0.0.1-security",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
@@ -39,5 +38,8 @@
     "imagemin-svgo": "^7.1.0",
     "postcss-preset-env": "^8.5.1",
     "sass": "^1.60.0"
+  },
+  "devDependencies": {
+    "del": "^6.1.1"
   }
 }

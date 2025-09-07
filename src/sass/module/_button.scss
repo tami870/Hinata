@@ -2,7 +2,6 @@
 
 .button {
   display: inline-block;
-  width: rem(478);
   font-family: $base-font-family;
   font-size: rem(24);
   font-weight: $max-bold;
@@ -18,16 +17,15 @@
   box-shadow: 0 7px 12px rgba(35, 19, 5, 0.23);
 
   @include mq(md) {
-    width: rem(345);
     font-size: rem(16);
-    padding: rem(9.5) rem(9.5);
+    padding: rem(10) rem(10);
   }
 }
 
 .button:hover,
 .button:focus {
   transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(255, 133, 51, 0.5); // オレンジのオーラ風影
+  box-shadow: 0 10px 20px rgba(255, 133, 51, 0.5);
 }
 
 // 疑似要素で柔らかい光のオーラ

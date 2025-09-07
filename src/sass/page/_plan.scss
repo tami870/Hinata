@@ -276,3 +276,12 @@
   text-align: center;
   z-index: 100;
 }
+
+.plan__cta-button {
+  display: inline-block;
+  width: rem(478);
+
+  @include mq(md) {
+    width: rem(345);
+  }
+}

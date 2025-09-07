@@ -1,0 +1,306 @@
+@use "global" as *;
+
+/* =========================================================
+   1) <form class="form"> ～ 構造の順番で上から
+========================================================= */
+.form {
+}
+
+.form__list {
+  margin: 0;
+}
+
+.form__item:not(:first-child) {
+  margin-top: rem(32);
+
+  @include mq(md) {
+    margin-top: rem(20);
+  }
+}
+
+.form__group {
+  display: flex;
+  align-items: flex-start;
+
+  @include mq(md) {
+    display: block;
+  }
+}
+
+.form__label {
+  width: rem(200);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+
+  @include mq(md) {
+    width: 100%;
+  }
+}
+
+.form__label--message {
+  margin-top: rem(13);
+
+  @include mq(md) {
+    margin-top: 0;
+  }
+}
+
+.form__label-text {
+  font-size: rem(14);
+  font-weight: $medium;
+}
+
+.form__label-text--required::after {
+  content: "★";
+  color: $red;
+  font-size: rem(8);
+  vertical-align: super;
+}
+
+.form__input {
+  flex: 1;
+  max-width: rem(800);
+
+  @include mq(md) {
+    width: 100%;
+    margin-top: rem(4);
+  }
+}
+
+// flex: 1; を初期化して幅を自由に調節（ご用件）
+.form__input--narrow {
+  flex: initial;
+  width: 40%;
+}
+
+/* =========================================================
+   2) 入力コントロール共通（text / textarea / select）
+========================================================= */
+.form__input-text,
+.form__textarea,
+.form__select {
+  width: 100%;
+  padding: rem(10);
+  font-size: rem(14);
+  font-weight: $regular;
+  line-height: 1.5;
+  box-sizing: border-box;
+  border-radius: rem(4);
+  background-color: $white;
+  border: 1px solid $white2; // ★ 調整: デフォルト枠色
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* フォーカス or 入力中 */
+.form__input-text:focus,
+.form__textarea:focus,
+.form__select:focus {
+  outline: none;
+  border-color: $green20;
+  box-shadow: 0 0 0 rem(3) rgba($green20, 0.3);
+}
+
+/* キーボード操作の可視リング */
+.form__input-text:focus-visible,
+.form__textarea:focus-visible,
+.form__select:focus-visible {
+  outline: none;
+  border-color: $mint; // ★ 調整: キー操作時は少し鮮やかに
+  box-shadow: 0 0 0 rem(3) rgba($mint, 0.3);
+}
+
+/* ハイコントラスト環境用 */
+@media (forced-colors: active) {
+  .form__input-text:focus,
+  .form__textarea:focus,
+  .form__select:focus {
+    outline: 1px solid CanvasText;
+    box-shadow: none;
+  }
+}
+
+/* プレースホルダ色（text/textarea）・未選択 select の文字色 */
+.form__input-text::placeholder,
+.form__textarea::placeholder {
+  color: $gray;
+  opacity: 0.7;
+}
+
+.form__select:required:invalid {
+  color: $gray;
+}
+
+/* select 固有の見た目調整（OS差吸収） */
+.form__select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, $black 50%),
+    linear-gradient(135deg, $black 50%, transparent 50%),
+    linear-gradient(to right, transparent, transparent);
+  background-position: calc(100% - rem(18)) center, calc(100% - rem(12)) center,
+    100% 0;
+  background-size: rem(6) rem(6), rem(6) rem(6), rem(2) 100%;
+  background-repeat: no-repeat;
+  padding-right: rem(32);
+  min-height: rem(40);
+  line-height: 1.5;
+}
+
+/* iOSの角丸・内側影の差異を減らす */
+@supports (-webkit-touch-callout: none) {
+  .form__select {
+    border-radius: rem(6);
+  }
+}
+
+.form__textarea {
+  height: rem(150);
+  resize: vertical;
+}
+
+/* =========================================================
+   3) 行内メッセージ（note / ok / err）と表示制御
+========================================================= */
+/* 常時のルール文（黒）＋状態行の初期状態 */
+.form__note {
+  margin-top: rem(6);
+  font-size: rem(10);
+  color: $black;
+  background-color: $background-gray;
+}
+
+.form__state {
+  display: none;
+  margin-top: rem(6);
+  font-size: rem(10);
+  align-items: center;
+  gap: 0.4em;
+}
+
+.form__state--ok {
+  color: #2e7d32;
+  background-color: $background-gray;
+}
+
+.form__state--ok::before {
+  content: "\2713"; // チェックマーク
+  font-weight: $medium;
+}
+
+.form__state--err {
+  color: #e53935;
+  background-color: $background-gray;
+}
+
+.form__state--err::before {
+  content: "\0d7"; // バツマーク
+  font-weight: $medium;
+}
+
+/* OK表示：対象フィールドが valid のとき */
+.form__input-text[data-touched]:valid ~ .form__state--ok,
+.form__select[data-touched]:valid ~ .form__state--ok {
+  display: flex;
+}
+
+// .form__input-text[data-touched]:invalid ~ .form__state--err,
+// .form__select[data-touched]:invalid ~ .form__state--err {
+//   display: flex;
+// }
+
+// ユーザーが入力時はメッセージを消しておく
+.form__input-text[data-touched]:valid ~ .form__note,
+.form__select[data-touched]:valid ~ .form__note {
+  display: none;
+}
+
+.form__input-text[data-touched]:invalid ~ .form__note,
+.form__select[data-touched]:invalid ~ .form__note {
+  display: none;
+}
+
+/* お名前が未入力 */
+.form__input-text[name="お名前"][data-touched]:invalid
+  ~ .form__err--name-required {
+  display: flex;
+}
+
+// メールアドレス：空欄のとき（プレースホルダが見えてる = 未入力）
+input[type="email"][data-touched]:invalid:placeholder-shown
+  ~ .form__err--email-required {
+  display: flex;
+}
+
+// メールアドレス：入力済みだが形式が無効
+input[type="email"][data-touched]:invalid:not(:placeholder-shown)
+  ~ .form__err--email-format {
+  display: flex;
+}
+
+/* ご用件が未選択 */
+select[name="ご用件"][data-touched]:invalid ~ .form__err--subject-required {
+  display: flex;
+}
+
+// /* =========================================================
+//    4) Valid / Invalid のフィールド配色（境界と背景/影）
+// ========================================================= */
+// 入力済みの場合は背景緑に
+.form__input-text:valid,
+.form__select:valid {
+  border-color: $green20;
+  background-color: rgba($green20, 0.08);
+}
+
+// エラーメッセージありの場合は背景赤に
+.form__input-text[data-touched]:invalid,
+.form__select[data-touched]:invalid {
+  border-color: red;
+  background-color: rgba(255, 0, 0, 0.1);
+  box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.2);
+}
+
+/* =========================================================
+   5) 送信ボタン（submit エリア）
+========================================================= */
+.form__submit {
+  margin-top: rem(50);
+  text-align: center;
+}
+
+.form__button {
+  max-width: rem(200);
+  width: 100%;
+}
+
+.form__button:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   6) パフォーマンス/配慮、スクロール補正
+========================================================= */
+@media (prefers-reduced-motion: reduce) {
+  .form__input-text,
+  .form__textarea,
+  .form__select {
+    transition: none;
+  }
+}
+
+/* 固定ヘッダー分のスクロールずれ対策 */
+#user-name,
+#user-email,
+#user-subject,
+#user-message {
+  scroll-margin-top: var(--header-height, 0px);
+}
+
+/* 送信前やエラーなしのときは自動的に非表示（旧API用） */
+.form__error:empty {
+  display: none;
+}

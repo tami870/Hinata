@@ -1,0 +1,5 @@
+AuthUserFile /home/users/2/kilo.jp-tamitami/web/hinata/.htpasswd
+AuthGroupFile /dev/null
+AuthName "hinata様_新規LP"
+AuthType Basic
+require valid-user

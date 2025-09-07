@@ -39,7 +39,7 @@
   <link rel="shortcut icon" href="./assets/images/common/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/common/apple-touch-icon.png" />
   <meta name="apple-mobile-web-app-title" content="Hinata" />
-  <link rel="manifest" href="/site.webmanifest" />
+  <!-- <link rel="manifest" href="site.webmanifest" /> -->
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,17 +49,19 @@
   <!-- CSS -->
   <link rel="stylesheet" href="./assets/css/style.css" />
   <!-- GSAP -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
-
-  <!-- JavaScript（jQuery 3.7.1 + 正SRI）-->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
+  <!-- ScrollSmoother requires ScrollTrigger -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js" defer></script>
+  <!-- jQuery -->
   <script defer src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script defer src="./assets/js/script.js"></script>
+  <!-- JavaScript -->
+  <script defer src="./assets/js/script.js?v=20250906"></script>
 </head>
 
 <body>
   <header class="header js-header">
-    <div class="header__inner">
+    <div class="header__inner inner">
       <h1 class="header__title">
         <a href="/" class="header__link" aria-label="トップページへ戻る">
           <picture>
@@ -80,7 +82,7 @@
             <a href="#faq" class="header__link">よくある質問</a>
           </li>
           <li class="header__item">
-            <a href="#contact" class="header__link">お問合せ</a>
+            <a href="#contact" class="header__link">お問い合わせ</a>
           </li>
         </ul>
       </nav>
@@ -105,7 +107,7 @@
             <a href="#faq" class="drawer-menu__link">よくある質問</a>
           </li>
           <li class="drawer-menu__item">
-            <a href="#contact" class="drawer-menu__link">お問合せ</a>
+            <a href="#contact" class="drawer-menu__link">お問い合わせ</a>
           </li>
         </ul>
       </div>
@@ -114,7 +116,7 @@
 
   <main>
     <section class="first-view">
-      <div class="first-view__inner">
+      <div class="first-view__inner inner">
         <div class="first-view__content">
           <div class="first-view__catchphrase">
             <h2 class="first-view__catchphrase-text">
@@ -162,22 +164,14 @@
       <div class="manga__inner inner">
         <div class="manga__item">
           <img src="./assets/images/common/manga01.jpg"
-            alt="アクセサリー作家が店舗経営やホームページ制作、SNS運用や販促活動に追われ制作に集中できず悩む。解決策を提示するママ集団の登場で希望を見出す場面。" class="manga__image">
-        </div>
-        <div class="manga__item">
-          <img src="./assets/images/common/manga02.jpg"
-            alt="アクセサリー作家を支援するママ集団が登場し、ホームページ制作やSNS運用、チラシ制作、経理まで担当。店舗経営や販促をサポートして集客と売上アップを実現する展開。" class="manga__image">
-        </div>
-        <div class="manga__item">
-          <img src="./assets/images/common/manga03.jpg"
-            alt="アクセサリー作家の経営や集客の悩みが解決し、ホームページ制作やSNS運用、販促支援を担ったママ集団に感謝を伝える。涙ながらに「ありがとう」と表現する感動的なラストシーン。"
-            class="manga__image">
+            alt="アクセサリー作家が店舗経営やホームページ制作、SNS運用や販促活動に追われ制作に集中できず悩む。解決策を提示するママ集団の登場で希望を見出す場面。" class="manga__image"
+            width="1200" height="800">
         </div>
       </div>
     </section>
 
     <section id="plan" class="plan" aria-labelledby="plan-title">
-      <div class="plan__inner">
+      <div class="plan__inner inner">
         <div class="heading-wrap heading-wrap--center">
           <h2 id="plan-title" class="plan__title heading">Web×バックオフィス</h2>
         </div>
@@ -336,7 +330,7 @@
             </div>
 
             <p class="plan__cta-action">
-              <a href="#" class="button" aria-label="無料相談フォームへ">無料で相談する</a>
+              <a href="#" class="plan__cta-button button" aria-label="無料相談フォームへ">無料で相談する</a>
             </p>
           </div>
         </div>
@@ -344,8 +338,23 @@
       </div>
     </section>
 
+    <section class="manga" aria-label="事業内容を紹介するマンガ">
+      <div class="manga__inner inner">
+        <div class="manga__item">
+          <img src="./assets/images/common/manga02.jpg"
+            alt="アクセサリー作家を支援するママ集団が登場し、ホームページ制作やSNS運用、チラシ制作、経理まで担当。店舗経営や販促をサポートして集客と売上アップを実現する展開。" class="manga__image"
+            width="1200" height="800">
+        </div>
+        <div class="manga__item">
+          <img src="./assets/images/common/manga03.jpg"
+            alt="アクセサリー作家の経営や集客の悩みが解決し、ホームページ制作やSNS運用、販促支援を担ったママ集団に感謝を伝える。涙ながらに「ありがとう」と表現する感動的なラストシーン。"
+            class="manga__image" width="1200" height="800">
+        </div>
+      </div>
+    </section>
+
     <section id="faq" class="faq">
-      <div class="faq__inner">
+      <div class="faq__inner inner">
         <div class="heading-wrap heading-wrap--center">
           <h2 class="faq__title heading heading__title">よくある質問</h2>
         </div>
@@ -410,17 +419,98 @@
     <section id="contact" class="contact" aria-labelledby="contact-title">
       <div class="contact__inner inner">
         <div class="heading-wrap heading-wrap--center">
-          <h2 id="contact-title" class="contact__title heading heading__title">お問合せ</h2>
+          <h2 id="contact-title" class="contact__title heading heading__title">お問い合わせ</h2>
         </div>
-        <p class="contact__text">
-          お見積り、ご相談ご希望の方は<br>
-          下のLINEよりお問い合わせください。
-        </p>
-        <figure class="contact__qr">
-          <img src="./assets/images/common/LINE.jpg" alt="LINE公式アカウントのQRコード（スマートフォンで読み取ってください）" width="125" height="125"
-            loading="lazy" decoding="async" class="contact__qr-image">
-        </figure>
-      </div>
+
+        <div class="contact__text-wrapper">
+          <p class="contact__text">お問い合わせは下記フォーム、またはLINEより受け付けております。<br>担当者が確認後、折り返しご連絡させていただきます。</p>
+        </div>
+
+        <div class="contact__content">
+          <form action="mail.php" method="POST" class="contact__form form" novalidate>
+            <ul class="form__list">
+
+              <!-- お名前 -->
+              <li class="form__item">
+                <dl class="form__group">
+                  <dt class="form__label">
+                    <label for="user-name" class="form__label-text form__label-text--required">お名前</label>
+                  </dt>
+                  <dd class="form__input">
+                    <input type="text" id="user-name" class="form__input-text" name="お名前" placeholder="佐藤&emsp;さとみ"
+                      required autocomplete="name">
+                    <p class="form__note">お名前を入力してください。</p>
+                    <p class="form__state form__state--ok" aria-live="polite">入力済み</p>
+                    <p class="form__state form__state--err form__err--name-required" aria-live="polite">お名前を入力してください。
+                    </p>
+                  </dd>
+                </dl>
+              </li>
+
+              <!-- メールアドレス -->
+              <li class="form__item">
+                <dl class="form__group">
+                  <dt class="form__label">
+                    <label for="user-email" class="form__label-text form__label-text--required">メールアドレス</label>
+                  </dt>
+                  <dd class="form__input">
+                    <input type="email" id="user-email" class="form__input-text" name="email"
+                      placeholder="satomi.handmade-creator@hinata.co.jp" required autocomplete="email"
+                      inputmode="email">
+                    <p class="form__note">メールアドレスを入力してください。</p>
+                    <p class="form__state form__state--ok" aria-live="polite">入力済み</p>
+                    <p class="form__state form__state--err form__err--email-required" aria-live="polite">
+                      メールアドレスを入力してください。
+                    </p>
+                    <p class="form__state form__state--err form__err--email-format" aria-live="polite">
+                      メールアドレスの形式が正しくありません。
+                    </p>
+                  </dd>
+                </dl>
+              </li>
+
+              <!-- ご用件（プルダウン） -->
+              <li class="form__item">
+                <dl class="form__group">
+                  <dt class="form__label">
+                    <label for="user-subject" class="form__label-text form__label-text--required">ご用件</label>
+                  </dt>
+                  <dd class="form__input form__input--narrow">
+                    <select id="user-subject" class="form__select" name="ご用件" required>
+                      <option value="" selected disabled>選択してください</option>
+                      <option value="資料請求">資料請求</option>
+                      <option value="サービスについて">サービスについて</option>
+                      <option value="採用について">採用について</option>
+                      <option value="その他">その他</option>
+                    </select>
+                    <p class="form__note">ご用件を選択してください。</p>
+                    <p class="form__state form__state--ok" aria-live="polite">入力済み</p>
+                    <p class="form__state form__state--err form__err--subject-required" aria-live="polite">ご用件を選択してください。
+                    </p>
+                  </dd>
+                </dl>
+              </li>
+
+              <!-- お問い合わせ内容 -->
+              <li class="form__item">
+                <dl class="form__group form__group--message">
+                  <dt class="form__label form__label--message">
+                    <label for="user-message" class="form__label-text">お問い合わせ内容（任意）</label>
+                  </dt>
+                  <dd class="form__input">
+                    <textarea id="user-message" class="form__textarea" name="お問い合わせ内容"
+                      placeholder="ご自由に入力してください"></textarea>
+                  </dd>
+                </dl>
+              </li>
+            </ul>
+            <!-- 送信ボタン -->
+            <div class="form__submit">
+              <button type="submit" class="form__button button" aria-label="お問い合わせ内容を送信" disabled>送信</button>
+            </div>
+          </form>
+        </div>
+
     </section>
   </main>
 

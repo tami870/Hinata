@@ -1,13 +1,13 @@
 @use "global" as *;
 
 .contact {
-  padding-top: rem(103);
-  padding-bottom: rem(92);
+  padding-top: rem(90);
+  padding-bottom: rem(90);
   background-color: $background-gray;
 
   @include mq(md) {
-    padding-top: rem(30);
-    padding-bottom: rem(52);
+    padding-top: rem(40);
+    padding-bottom: rem(40);
   }
 }
 
@@ -15,6 +15,10 @@
 }
 
 .contact__title {
+}
+
+.contact__text-wrapper {
+  text-align: center;
 }
 
 .contact__text {
@@ -27,36 +31,31 @@
 
   @include mq(md) {
     margin-top: rem(45);
+    text-align: left;
   }
 }
 
-.contact__qr {
-  margin-top: rem(55);
-  margin-right: auto;
-  margin-bottom: 0;
-  margin-left: auto;
-  display: grid;
-  justify-items: center;
-  text-align: center;
-  gap: rem(8);
+.contact__content {
+  margin-top: rem(60);
+  background-color: $background-gray;
+  border-radius: rem(20);
+  display: block;
+  padding: rem(32);
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0); // アニメーションで浮かせる
 
   @include mq(md) {
-    margin-top: rem(31);
+    margin-top: rem(40);
+    padding-left: rem(16);
+    padding-right: rem(16);
+    border-radius: rem(16);
   }
 }
 
-.contact__qr-image {
-  max-width: rem(125);
+.contact__form {
   width: 100%;
-  height: auto;
-  aspect-ratio: 1 / 1;
 
   @include mq(md) {
-    max-width: rem(97);
+    padding-top: rem(40);
+    padding-bottom: rem(40);
   }
-}
-
-.contact__qr-caption {
-  font-size: rem(14);
-  color: $black2;
 }

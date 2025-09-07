@@ -1,7 +1,10 @@
+gsap.registerPlugin(ScrollTrigger);
+
 jQuery(function ($) {
   // ===============================
   // 1) ヘッダー高さ → CSS変数へ同期
   // ===============================
+
   const headerEl = document.querySelector(".js-header");
   const setHeaderVar = () => {
     const h = headerEl ? headerEl.offsetHeight : 0;
@@ -19,6 +22,7 @@ jQuery(function ($) {
   // ===============================
   // 2) ハンバーガー開閉 & ドロワー
   // ===============================
+
   $(".js-hamburger").on("click", function () {
     $(this).toggleClass("is-active");
     $(".js-drawer").fadeToggle();
@@ -32,6 +36,7 @@ jQuery(function ($) {
   // ===============================
   // 3) 直リンク(#hash)・履歴移動にも確実に効かせる保険
   // ===============================
+
   const scrollToHash = () => {
     if (!location.hash) return;
     const t = document.querySelector(decodeURIComponent(location.hash));
@@ -46,6 +51,7 @@ jQuery(function ($) {
   // ===============================
   // 4) ページトップボタン
   // ===============================
+
   const $pageTop = $(".js-page-top");
   $pageTop.hide();
 
@@ -61,7 +67,6 @@ jQuery(function ($) {
   // ===============================
   // 5) GSAPアニメーション
   // ===============================
-  gsap.registerPlugin(ScrollTrigger);
 
   gsap.fromTo(
     ".first-view__catchphrase-part",
@@ -70,9 +75,9 @@ jQuery(function ($) {
       scrollTrigger: { trigger: ".first-view__catchphrase", start: "top 80%" },
       opacity: 1,
       y: 0,
-      duration: 1,
+      duration: 1, // カードのアニメーション時間
       ease: "power2.out",
-      stagger: 0.3,
+      stagger: 0.3, // カードのアニメーションスピード
     }
   );
 
@@ -88,29 +93,34 @@ jQuery(function ($) {
         },
         opacity: 1,
         y: 0,
-        duration: 0.8,
+        duration: 0.8, // カードのアニメーション時間
         ease: "power2.out",
-        delay: index * 0.2,
+        delay: index * 0.2, // カードのアニメーションスピード
       }
     );
   });
 
-  gsap.fromTo(
-    ".plan-card, .plan-card--large", // ← 両方対象
-    { opacity: 0, y: 30 },
-    {
-      scrollTrigger: {
-        trigger: ".plan__items, .plan__items--large", // ← 親要素も両方指定
-        start: "top 90%",
-        toggleActions: "play none none none",
-      },
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      ease: "power2.out",
-      stagger: 0.5, // 順に出したいなら数値指定 / 同時なら 0
-    }
+  const planTrigger = document.querySelector(
+    ".plan__items, .plan__items--large"
   );
+  if (planTrigger) {
+    gsap.fromTo(
+      ".plan-card, .plan-card--large",
+      { opacity: 0, y: 30 },
+      {
+        scrollTrigger: {
+          trigger: planTrigger,
+          start: "top 90%",
+          toggleActions: "play none none none",
+        },
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        ease: "power2.out",
+        stagger: 0.3,
+      }
+    );
+  }
 
   gsap.fromTo(
     ".plan__cta-bubble",
@@ -119,9 +129,9 @@ jQuery(function ($) {
       scrollTrigger: { trigger: ".plan__cta-bubble", start: "top 85%" },
       scale: 1,
       opacity: 1,
-      duration: 0.8,
+      duration: 0.8, // 吹き出しのアニメーション時間
       ease: "back.out(2.0)",
-      delay: 0.5,
+      delay: 0.4, // 吹き出しのアニメーションスピード
     }
   );
 
@@ -160,29 +170,95 @@ jQuery(function ($) {
     }
   );
 
-  gsap.utils.toArray(".faq__list").forEach((item, i) => {
-    const q = item.querySelector(".faq-list__question");
-    const a = item.querySelector(".faq-list__answer");
-
-    // アイテムごとに発火（自然に追従）
-    const tl = gsap.timeline({
+  gsap.fromTo(
+    ".faq__list",
+    { opacity: 0, y: 20 },
+    {
       scrollTrigger: {
-        trigger: item,
-        start: "top 85%",
+        trigger: ".faq__lists",
+        start: "top 80%",
         once: true,
       },
+      opacity: 1,
+      y: 0,
+      duration: 0.6,
+      stagger: 0.4,
+      ease: "power2.out",
+    }
+  );
+
+  gsap.to(".contact__content", {
+    boxShadow: "0 20px 48px rgba(0, 0, 0, 0.3)",
+    duration: 1,
+    ease: "power1.out",
+    scrollTrigger: {
+      trigger: ".contact__content",
+      start: "top 90%",
+      toggleActions: "play none none none",
+    },
+  });
+
+  // ===============================
+  // 6) バリデーション
+  // ===============================
+
+  // 送信時に未入力を目立たせる
+  document
+    .querySelector(".contact__form")
+    .addEventListener("submit", function (e) {
+      const invalidEl = this.querySelector(":invalid");
+      if (invalidEl) {
+        e.preventDefault();
+        invalidEl.focus();
+        invalidEl.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
     });
 
-    // Qを先に、Aを少し遅れて
-    tl.fromTo(
-      q,
-      { opacity: 0, y: 18 },
-      { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" }
-    ).fromTo(
-      a,
-      { opacity: 0, y: 18 },
-      { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" },
-      "-=0.20"
-    );
+  // フィールドを触ったら data-touched を付ける
+  document
+    .querySelectorAll(".form__input-text, .form__select")
+    .forEach((el) => {
+      el.addEventListener("blur", () => {
+        el.setAttribute("data-touched", "true");
+      });
+    });
+
+  const form = document.querySelector(".contact__form");
+  const requiredFields = form.querySelectorAll(
+    ".form__input-text[required], .form__select[required]"
+  );
+  const submitButton = form.querySelector(".form__button");
+
+  // バリデーションチェック関数
+  const checkFormValidity = () => {
+    const allValid = Array.from(requiredFields).every((el) => {
+      return el.dataset.touched && el.checkValidity();
+    });
+    submitButton.disabled = !allValid;
+  };
+
+  // 各フィールドに blur イベント追加
+  requiredFields.forEach((el) => {
+    el.addEventListener("blur", checkFormValidity);
+    el.addEventListener("input", checkFormValidity); // 入力途中でも反応させる
+  });
+
+  // メールアドレスの形式バリデーションを強化
+  const emailInput = form.querySelector('input[type="email"]');
+
+  emailInput.addEventListener("blur", function () {
+    const email = emailInput.value.trim();
+    const emailFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (email === "") {
+      emailInput.setCustomValidity("メールアドレスを入力してください");
+    } else if (!emailFormat.test(email)) {
+      emailInput.setCustomValidity("メールアドレスの形式が正しくありません");
+    } else {
+      emailInput.setCustomValidity("");
+    }
+
+    // エラーメッセージ表示のために再バリデーション
+    checkFormValidity();
   });
 });

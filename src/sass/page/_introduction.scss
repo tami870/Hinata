@@ -86,8 +86,10 @@
 
 .introduction__button {
   margin-top: clamp(rem(18), 2.2vw, rem(26));
+  width: rem(478);
 
   @include mq(md) {
     margin-top: rem(40);
+    width: rem(345);
   }
 }
