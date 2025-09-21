@@ -18,9 +18,9 @@ html {
   display: none;
   width: 100%;
   /* ビューポート起伏対策：古→新の順に上書き */
-  height: 66.6vh; // フォールバック
-  height: 66.6svh; // 小さい動的VH（iOSの隠れバー対策）
-  height: 66.6dvh; // 最終的な動的VH
+  height: 80vh; // フォールバック
+  height: 80svh; // 小さい動的VH（iOSの隠れバー対策）
+  height: 80dvh; // 最終的な動的VH
   overflow: hidden;
 
   /* 背景画像レイヤー */
@@ -68,7 +68,7 @@ html {
 
 .drawer-menu__link {
   display: inline-block;
-  width: rem(200);
+  width: rem(300);
   text-align: center;
   letter-spacing: 0.05em;
   font-family: $base-font-family;
@@ -78,7 +78,8 @@ html {
 }
 
 .drawer-menu__image {
-  max-width: rem(250);
+  max-width: rem(500);
   width: 100%;
-  margin-top: rem(40);
+  margin-top: rem(60);
+  padding: 0 rem(15);
 }
