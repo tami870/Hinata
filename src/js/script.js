@@ -68,6 +68,8 @@ jQuery(function ($) {
   // 5) GSAPアニメーション
   // ===============================
 
+  // 【first-viewセクション】
+  // キャッチコピーのみ下からフェードイン
   gsap.fromTo(
     ".first-view__catchphrase-part",
     { opacity: 0, y: 20 },
@@ -75,12 +77,29 @@ jQuery(function ($) {
       scrollTrigger: { trigger: ".first-view__catchphrase", start: "top 80%" },
       opacity: 1,
       y: 0,
-      duration: 1, // カードのアニメーション時間
+      duration: 1, // アニメーション時間
       ease: "power2.out",
-      stagger: 0.3, // カードのアニメーションスピード
+      stagger: 0.3, // アニメーションスピード
     }
   );
 
+  // 【introductionセクション】
+  // 文章のみ下からフェードイン
+  gsap.fromTo(
+    ".introduction__text-area",
+    { opacity: 0, y: 20 },
+    {
+      scrollTrigger: { trigger: ".first-view__catchphrase", start: "top 90%" },
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      ease: "power2.out",
+      stagger: 0.5,
+    }
+  );
+
+  //【mangaセクション】
+  // 下からフェードイン
   gsap.utils.toArray(".manga__item").forEach((item, index) => {
     gsap.fromTo(
       item,
@@ -93,13 +112,14 @@ jQuery(function ($) {
         },
         opacity: 1,
         y: 0,
-        duration: 0.8, // カードのアニメーション時間
+        duration: 0.8,
         ease: "power2.out",
-        delay: index * 0.2, // カードのアニメーションスピード
+        delay: index * 0.2,
       }
     );
   });
 
+  // 【planセクションのカード】
   const planTrigger = document.querySelector(
     ".plan__items, .plan__items--large"
   );
@@ -122,6 +142,8 @@ jQuery(function ($) {
     );
   }
 
+  // 【planセクションの吹き出し】
+  // 軽く弾むようなイメージ
   gsap.fromTo(
     ".plan__cta-bubble",
     { scale: 0.8, opacity: 0 },
@@ -129,13 +151,14 @@ jQuery(function ($) {
       scrollTrigger: { trigger: ".plan__cta-bubble", start: "top 85%" },
       scale: 1,
       opacity: 1,
-      duration: 0.8, // 吹き出しのアニメーション時間
+      duration: 0.8,
       ease: "back.out(2.0)",
-      delay: 0.4, // 吹き出しのアニメーションスピード
+      delay: 0.4,
     }
   );
 
-  // 導入ボタン：ふわっと
+  // 【planセクションの導入ボタン】
+  // ふわっとフェードイン
   gsap.fromTo(
     ".introduction__button",
     { autoAlpha: 0, y: 14 },
@@ -154,7 +177,8 @@ jQuery(function ($) {
     }
   );
 
-  // CTAボタン：吹き出しの後ろに少し遅れて
+  // 【CTAボタン】
+  // 吹き出しの後ろに少し遅れてフェードイン
   gsap.fromTo(
     ".plan__cta-action .button",
     { autoAlpha: 0, y: 16 },
@@ -170,6 +194,8 @@ jQuery(function ($) {
     }
   );
 
+  // 【FAQセクション】
+  // 下からフェードイン
   gsap.fromTo(
     ".faq__list",
     { opacity: 0, y: 20 },
@@ -187,6 +213,8 @@ jQuery(function ($) {
     }
   );
 
+  // 【お問い合わせフォーム】
+  // ふわっと浮き出るイメージ
   gsap.to(".contact__content", {
     boxShadow: "0 20px 48px rgba(0, 0, 0, 0.3)",
     duration: 1,
@@ -196,6 +224,16 @@ jQuery(function ($) {
       start: "top 90%",
       toggleActions: "play none none none",
     },
+  });
+
+  // 【サンクスページ】
+  // ふわっと飛び出すようにフェードイン
+  gsap.from(".thanks__logo", {
+    scale: 0.8,
+    opacity: 0,
+    duration: 0.8,
+    ease: "back.out(1.7)",
+    delay: 0.3,
   });
 
   // ===============================

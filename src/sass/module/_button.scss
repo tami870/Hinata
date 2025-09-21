@@ -22,35 +22,7 @@
   }
 }
 
-.button:hover,
-.button:focus {
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(255, 133, 51, 0.5);
-}
-
-// 疑似要素で柔らかい光のオーラ
-.button::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: radial-gradient(
-    circle at center,
-    rgba(255, 133, 51, 0.35),
-    transparent 70%
-  );
-  opacity: 0;
-  transform: scale(0.8);
-  transition: opacity 0.4s ease, transform 0.4s ease;
-  z-index: -1;
-}
-
-.button:hover::before,
-.button:focus::before {
-  opacity: 1;
-  transform: scale(1.2);
-}
-
+// 大なり ”＞” を作る
 .button:after {
   position: absolute;
   top: rem(31);
@@ -70,6 +42,31 @@
   }
 }
 
+// ===================================
+// LINEに誘導するボタン
+// ===================================
+
+.button--line {
+  background-color: #06c755; // LINE公式グリーン
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: rem(8);
+}
+
+.button--line:hover,
+.button--line:focus {
+  background-color: darken(#06c755, 5%);
+}
+
+.button__icon img {
+  display: block;
+}
+
+// ===================================
+// thanksページのボタン
+// ===================================
+
 .button--thanks {
-  width: rem(250);
+  width: 100%;
 }

@@ -18,18 +18,23 @@ html {
   display: none;
   width: 100%;
   /* ビューポート起伏対策：古→新の順に上書き */
-  height: 100vh; // フォールバック
-  height: 100svh; // 小さい動的VH（iOSの隠れバー対策）
-  height: 100dvh; // 最終的な動的VH
+  height: 66.6vh; // フォールバック
+  height: 66.6svh; // 小さい動的VH（iOSの隠れバー対策）
+  height: 66.6dvh; // 最終的な動的VH
   overflow: hidden;
 
   /* 背景画像レイヤー */
   .drawer-menu__background {
     position: absolute;
     inset: 0;
-    // background: url("../images/common/option_park02.png") center/cover no-repeat;
-    // filter: blur(8px);
-    background-color: $green30;
+    background: linear-gradient(
+      135deg,
+      #fdf8e3 0%,
+      // やさしいクリーム色（花びら）
+      #fffacd 40%,
+      // レモン色（花の中心）
+      #d8f3b0 100% // 淡いグリーン（茎や葉っぱ）
+    );
     transform: scale(1.05);
     opacity: 1;
     z-index: 0;
@@ -42,6 +47,7 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   width: 100%;
   height: inherit;
 }
@@ -69,4 +75,10 @@ html {
   font-size: rem(18);
   font-weight: $medium;
   color: $black;
+}
+
+.drawer-menu__image {
+  max-width: rem(250);
+  width: 100%;
+  margin-top: rem(40);
 }

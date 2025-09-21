@@ -60,36 +60,58 @@
 </head>
 
 <body>
-  <main>
-    <div class="thanks">
-      <div class="thanks__inner inner">
-        <h1 class="thanks__text">
-          お問い合わせありがとうございます！<br>
-          内容を確認し、担当者からご連絡させていただきます。
-        </h1>
-        <div class="thanks__button">
-          <a href="index.html" class="button button--thanks">トップページへ戻る</a>
+
+  <body>
+    <header class="header js-header">
+      <div class="header__inner inner">
+        <div class="header__title">
+          <a href="/" class="header__link" aria-label="トップページへ戻る">
+            <picture>
+              <source media="(max-width: 767px)" srcset="./assets/images/common/header-logo_sp.svg">
+              <img class="header__logo" src="./assets/images/common/header-logo_pc.svg" alt="hinata" width="160"
+                height="83" decoding="async" loading="eager" fetchpriority="high">
+            </picture>
+          </a>
         </div>
+    </header>
+
+    <main>
+      <div class="thanks">
+        <div class="thanks__inner inner">
+          <div class="thanks__logo">
+            <img src="./assets/images/common/thanks-letter.png" alt="Thank you!">
+          </div>
+          <h1 class="thanks__text">
+            お問い合わせありがとうございます！<br>
+            内容を確認し、担当者からご連絡させていただきます。
+          </h1>
+          <div class="thanks__button">
+            <a href="index.html" class="button button--thanks">トップページへ戻る</a>
+          </div>
+        </div>
+        <div class="thanks__image">
+          <img src="./assets/images/common/thanks-image.png" alt="こちらを見てにっこり笑顔で手を振っている子どもと、それを見守っている母親の様子">
+        </div>
+
       </div>
-    </div>
-  </main>
+    </main>
 
-  <footer class="footer">
-    <div class="footer__inner inner">
-      <p class="footer__logo">
-        <a href="/" class="footer__logo-link">
-          <img src="./assets/images/common/footer-logo.svg" alt="Hinataトップへ" width="83" height="64" decoding="async"
-            class="footer__logo-image">
-        </a>
-      </p>
-      <small class="footer__copyright">
-        <span aria-hidden="true">©</span>
-        <span class="footer__year">2025</span>
-        <span class="footer__brand">hinata</span>
-      </small>
-    </div>
-  </footer>
+    <footer class="footer">
+      <div class="footer__inner inner">
+        <p class="footer__logo">
+          <a href="/" class="footer__logo-link">
+            <img src="./assets/images/common/footer-logo.svg" alt="Hinataトップへ" width="83" height="64" decoding="async"
+              class="footer__logo-image">
+          </a>
+        </p>
+        <small class="footer__copyright">
+          <span aria-hidden="true">©</span>
+          <span class="footer__year">2025</span>
+          <span class="footer__brand">hinata</span>
+        </small>
+      </div>
+    </footer>
 
-</body>
+  </body>
 
 </html>

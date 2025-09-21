@@ -16,7 +16,7 @@
   <meta property="og:title" content="Hinata｜仕事と家庭を軽やかに。ママ専門家のWebバックオフィスサポート" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://example.com" /> <!-- 本番ドメインに要変更 -->
-  <meta property="og:image" content="https://example.com/ogp.jpg" /> <!-- 本番ドメインに要変更 -->
+  <meta property="og:image" content="https://example.com/assets/images/ogp/ogp.jpg" /> <!-- 本番ドメインに要変更 -->
   <meta property="og:site_name" content="Hinata" />
   <meta property="og:description"
     content="Hinataは、ママ専門家によるWebバックオフィス支援サービス。HP制作、チラシ・名刺作成、経理、SNS運用、LPマンガ制作まで幅広くサポートし、“分かってくれる人”に安心して任せられます。" />
@@ -31,15 +31,19 @@
   <meta name="twitter:image" content="https://example.com/ogp.jpg" /> <!-- 本番ドメインに要変更 -->
 
   <!-- canonical -->
+  <!-- 本番ドメインに要変更 -->
   <link rel="canonical" href="https://example.com/">
 
   <!-- Favicon / App Icons -->
-  <link rel="icon" type="image/png" href="./assets/images/common/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="./assets/images/common/favicon.svg" />
-  <link rel="shortcut icon" href="./assets/images/common/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/common/apple-touch-icon.png" />
+  <link rel="icon" type="image/x-icon" href="./assets/images/favicon/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon/favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/svg+xml" href="./assets/images/favicon/favicon.svg" />
+
+  <!-- Apple Touch Icon (iOS用) -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/favicon/apple-touch-icon.png" />
   <meta name="apple-mobile-web-app-title" content="Hinata" />
-  <!-- <link rel="manifest" href="site.webmanifest" /> -->
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -110,6 +114,9 @@
             <a href="#contact" class="drawer-menu__link">お問い合わせ</a>
           </li>
         </ul>
+        <div class="drawer-menu__image">
+          <img src="./assets/images/common/drawer-image.png" alt="ノートパソコンを持って片手でOKサインを作っている女性の様子">
+        </div>
       </div>
     </div>
   </header>
@@ -154,7 +161,13 @@
             <p class="introduction__text">
               育児と仕事を両立する柔軟さと現場で磨いたスキルで<br>あなたの事業に必要な“もうひとつの手”になります。
             </p>
-            <a href="#" class="introduction__button button">無料で相談する</a>
+            <!-- LINEリンクを貼る -->
+            <a href="#" class="introduction__button button button--line" aria-label="LINEの無料相談フォームへ">
+              <span class="button__icon">
+                <img src="./assets/images/common/line-icon.svg" alt="LINEアイコン" width="20" height="20">
+              </span>
+              <span class="button__text">LINEで相談する</span>
+            </a>
           </div>
         </div>
       </div>
@@ -184,7 +197,7 @@
               <article class="plan-card">
                 <div class="plan-card__icon-group">
                   <div class="plan-card__icon">
-                    <img src="./assets/images/common/plan-icon01.svg" alt="" width="41" height="41">
+                    <img src="./assets/images/plan-icon/plan-icon01.svg" alt="" width="41" height="41">
                   </div>
                 </div>
                 <h4 class="plan-card__name">シンプルプラン</h4>
@@ -200,10 +213,10 @@
               <article class="plan-card">
                 <div class="plan-card__icon-group">
                   <div class="plan-card__icon" aria-hidden="true">
-                    <img src="./assets/images/common/plan-icon01.svg" alt="" width="41" height="41">
+                    <img src="./assets/images/plan-icon/plan-icon01.svg" alt="" width="41" height="41">
                   </div>
                   <div class="plan-card__icon" aria-hidden="true">
-                    <img src="./assets/images/common/plan-icon02.svg" alt="" width="41" height="33">
+                    <img src="./assets/images/plan-icon/plan-icon02.svg" alt="" width="41" height="33">
                   </div>
                 </div>
                 <h4 class="plan-card__name">＋印刷物プラン</h4>
@@ -220,13 +233,13 @@
               <article class="plan-card">
                 <div class="plan-card__icon-group">
                   <div class="plan-card__icon" aria-hidden="true">
-                    <img src="./assets/images/common/plan-icon01.svg" alt="" width="41" height="41">
+                    <img src="./assets/images/plan-icon/plan-icon01.svg" alt="" width="41" height="41">
                   </div>
                   <div class="plan-card__icon" aria-hidden="true">
-                    <img src="./assets/images/common/plan-icon02.svg" alt="" width="41" height="33">
+                    <img src="./assets/images/plan-icon/plan-icon02.svg" alt="" width="41" height="33">
                   </div>
                   <div class="plan-card__icon" aria-hidden="true">
-                    <img src="./assets/images/common/plan-icon03.svg" alt="" width="48" height="52">
+                    <img src="./assets/images/plan-icon/plan-icon03.svg" alt="" width="48" height="52">
                   </div>
                 </div>
                 <h4 class="plan-card__name">＋印刷物プラン＋SNSプラン</h4>
@@ -249,7 +262,7 @@
               <article class="plan-card plan-card--large">
                 <div class="plan-card__icon-group">
                   <div class="plan-card__icon" aria-hidden="true">
-                    <img src="./assets/images/common/plan-icon04.svg" alt="" width="41" height="45">
+                    <img src="./assets/images/plan-icon/plan-icon04.svg" alt="" width="41" height="45">
                   </div>
                 </div>
                 <h4 class="plan-card__name">個人事業主</h4>
@@ -265,7 +278,7 @@
               <article class="plan-card plan-card--large">
                 <div class="plan-card__icon-group">
                   <div class="plan-card__icon" aria-hidden="true">
-                    <img src="./assets/images/common/plan-icon05.svg" alt="" width="39" height="49">
+                    <img src="./assets/images/plan-icon/plan-icon05.svg" alt="" width="39" height="49">
                   </div>
                 </div>
                 <h4 class="plan-card__name">法人様向け</h4>
@@ -280,7 +293,7 @@
               <article class="plan-card plan-card--large">
                 <div class="plan-card__icon-group">
                   <div class="plan-card__icon" aria-hidden="true">
-                    <img src="./assets/images/common/plan-icon06.svg" alt="" width="34" height="43">
+                    <img src="./assets/images/plan-icon/plan-icon06.svg" alt="" width="34" height="43">
                   </div>
                 </div>
                 <h4 class="plan-card__name">個人事業主確定申告前期補助</h4>
@@ -295,7 +308,7 @@
               <article class="plan-card plan-card--large">
                 <div class="plan-card__icon-group">
                   <div class="plan-card__icon" aria-hidden="true">
-                    <img src="./assets/images/common/plan-icon07.svg" alt="" width="62" height="45">
+                    <img src="./assets/images/plan-icon/plan-icon07.svg" alt="" width="62" height="45">
                   </div>
                 </div>
                 <h4 class="plan-card__name">オプション</h4>
@@ -312,15 +325,15 @@
           <div class="plan__cta-group">
             <div class="plan__cta-visual">
               <div class="plan__cta-image plan__cta-image--main">
-                <img src="./assets/images/common/plan-illustration01.png" alt="親子が歩く様子のイラスト" width="516" height="774">
+                <img src="./assets/images/common/plan-illustration01.webp" alt="親子が歩く様子のイラスト" width="516" height="774">
               </div>
               <div class="plan__cta-image-wrapper">
                 <div class="plan__cta-image plan__cta-image--person1">
-                  <img src="./assets/images/common/plan-illustration02.png"
+                  <img src="./assets/images/common/plan-illustration02.webp"
                     alt="ノートパソコンを片手に持って歩いている女性がこちらを振り向いて話しかけている様子" width="540" height="810">
                 </div>
                 <div class="plan__cta-image plan__cta-image--person2">
-                  <img src="./assets/images/common/plan-illustration03.png" alt="女性と一緒にファイルを左手で抱えて歩いている女性の様子"
+                  <img src="./assets/images/common/plan-illustration03.webp" alt="女性と一緒にファイルを左手で抱えて歩いている女性の様子"
                     width="561" height="842">
                 </div>
                 <p class="plan__cta-bubble">
@@ -330,7 +343,13 @@
             </div>
 
             <p class="plan__cta-action">
-              <a href="#" class="plan__cta-button button" aria-label="無料相談フォームへ">無料で相談する</a>
+              <!-- LINEリンクを貼る -->
+              <a href="#" class="plan__cta-button button button--line" aria-label="LINEの無料相談フォームへ">
+                <span class="button__icon">
+                  <img src="./assets/images/common/line-icon.svg" alt="LINEアイコン" width="20" height="20">
+                </span>
+                <span class="button__text">LINEで相談する</span>
+              </a>
             </p>
           </div>
         </div>
