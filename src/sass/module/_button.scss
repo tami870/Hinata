@@ -42,6 +42,20 @@
   }
 }
 
+.button:hover,
+.button--line:focus {
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .button:hover,
+  .button--line:focus {
+    opacity: 1;
+    transition: none;
+  }
+}
+
 // ===================================
 // LINEに誘導するボタン
 // ===================================
@@ -57,6 +71,15 @@
 .button--line:hover,
 .button--line:focus {
   background-color: darken(#06c755, 5%);
+  transition: background-color 0.3s ease;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .button--line:hover,
+  .button--line:focus {
+    background-color: inherit;
+    transition: none;
+  }
 }
 
 .button__icon img {

@@ -84,7 +84,7 @@ $confirmDsp = 0;
 $jumpPage = 1;
 
 // 送信完了後に表示するページURL（上記で1を設定した場合のみ）※httpから始まるURLで指定ください。（相対パスでも基本的には問題ないです）
-$thanksPage = "http://hinata.tami-webcreator.jp/thanks.html";
+$thanksPage = "https://hinata.tami-webcreator.jp/thanks.html";
 
 // 必須入力項目を設定する(する=1, しない=0)
 $requireCheck = 1;
@@ -136,7 +136,7 @@ Hinata ◯◯ ◯◯
 TEL：03- XXXX - XXXX FAX：03- XXXX - XXXX
 携帯：090- XXXX - XXXX
 E-mail:xxxx@xxxx.com
-URL: http://hinata.tami-webcreator.jp/
+URL: https://hinata.tami-webcreator.jp/
 ──────────────────────
 
 FOOTER;

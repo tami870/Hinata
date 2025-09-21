@@ -60,6 +60,13 @@
   }
 }
 
+@media (hover: none) and (pointer: coarse) {
+  .header__link:hover,
+  .header__link:focus {
+    animation: none;
+  }
+}
+
 .header__logo {
   display: block;
   width: clamp(rem(100), 11.112vw, rem(160));
@@ -107,4 +114,10 @@
 
 .header__link:hover {
   opacity: 0.7;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .header__link:hover {
+    opacity: 1;
+  }
 }
